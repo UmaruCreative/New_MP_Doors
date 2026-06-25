@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1"/>
+
 <title>1/2 Lite Entry Door | MP Doors MasterPiece Series</title>
 <meta name="description" content="MP Doors 1/2 Lite Entry Door. Classic half-glass panel entry door in White composite. Available in 32 and 36 inch widths. Savana, Scotia, and Blinds Between Glass options. MasterPiece Series exclusively at The Home Depot."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -49,6 +50,871 @@ h1,h2,h3,h4,h5{line-height:1.2;}.sec-title{font-size:clamp(2rem,4vw,3.5rem);font
 .footer{background:var(--bg-dark);padding:80px 0 40px;}.footer-content{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:40px;}.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:24px;}.company-info p{font-size:0.825rem;color:rgba(255,255,255,0.6);line-height:1.8;}.footer-col h4{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.4);margin-bottom:20px;}.footer-col ul{display:flex;flex-direction:column;gap:10px;}.footer-col ul li a{font-size:0.875rem;color:rgba(255,255,255,0.65);transition:var(--transition);display:flex;align-items:center;gap:6px;}.footer-col ul li a:hover{color:var(--primary);}.footer-col ul li a svg{width:12px;height:12px;flex-shrink:0;opacity:0.5;}.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:40px;margin-top:60px;border-top:1px solid rgba(255,255,255,0.08);flex-wrap:wrap;gap:16px;}.footer-bottom p{font-size:0.8rem;color:rgba(255,255,255,0.4);}
 @media(max-width:1024px){.container,.container-sm{padding:0 24px;}.who-container{grid-template-columns:1fr;gap:40px;}.who-left .sec-head{position:static;}.acc-left-right{grid-template-columns:1fr;}.credentials-grid{grid-template-columns:repeat(2,1fr);}.warranty-tiles-grid{grid-template-columns:1fr;}.footer-content{grid-template-columns:1fr 1fr;}}
 @media(max-width:768px){.comm-section{padding:70px 0;}.nav-cta{display:none;}.hamburger{display:flex;}.credentials-grid{grid-template-columns:1fr;}.stat-strip-inner{gap:40px;}.footer-content{grid-template-columns:1fr;gap:32px;}}
+</style>
+
+<style id="mobile-v4">
+
+/* ── New elements: invisible on desktop ──────── */
+.m-nav,
+.m-nav-overlay { display: none; }
+
+@media (max-width: 768px) {
+
+  /* ═══════════════════════════════════════════
+     1. HEADER / HAMBURGER MENU
+  ═══════════════════════════════════════════ */
+
+  /* Hide desktop nav & Shop CTA; show hamburger */
+  .header-list,
+  .nav-cta { display: none !important; }
+
+  /* Refined floating-lines hamburger — no container, no system appearance */
+  .hamburger {
+    -webkit-appearance: none; appearance: none;
+    background: transparent !important;
+    border: none !important; border-radius: 0 !important;
+    box-shadow: none !important; outline: none;
+    display: flex !important; flex-direction: column;
+    align-items: flex-start; justify-content: center;
+    gap: 6px; padding: 8px 6px !important;
+    cursor: pointer; position: relative; z-index: 1002;
+  }
+
+  /* Slim the header bar on mobile */
+  .header-box .container { height: 60px; }
+  .logo-wrap img { height: 36px !important; }
+
+  /* Three lines: top & bottom full-width, middle shorter — refined visual rhythm */
+  .hamburger span {
+    display: block; border-radius: 2px;
+    background: #240F00;
+    transition: transform .3s ease, opacity .22s ease, width .25s ease, background .2s ease;
+    transform-origin: center;
+  }
+  .hamburger span:nth-child(1) { width: 22px; height: 2px; }
+  .hamburger span:nth-child(2) { width: 14px; height: 2px; }
+  .hamburger span:nth-child(3) { width: 22px; height: 2px; }
+
+  /* × morph — gap:6px + height:2px → center-to-center = 8px */
+  .hamburger.is-open span:nth-child(1) { transform: translateY(8px) rotate(45deg); width: 22px; }
+  .hamburger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .hamburger.is-open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); width: 22px; }
+
+  /* ── Dimmed overlay behind drawer ── */
+  .m-nav-overlay {
+    display: block;
+    position: fixed; inset: 0; z-index: 1001;
+    background: rgba(26, 8, 0, 0.52);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    opacity: 0; visibility: hidden;
+    transition: opacity .3s ease, visibility .3s ease;
+  }
+  .m-nav-overlay.is-open { opacity: 1; visibility: visible; }
+
+  /* ── Slide-in drawer panel ── */
+  .m-nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed; top: 0; right: 0; bottom: 0;
+    z-index: 1002;
+    width: min(84vw, 340px);
+    background: linear-gradient(160deg, #FFFBF5 0%, #FFF1E0 100%);
+    box-shadow: -18px 0 56px rgba(26, 8, 0, 0.3);
+    border-left: 1px solid rgba(242, 148, 48, 0.2);
+    transform: translateX(100%);
+    transition: transform .34s cubic-bezier(.4, 0, .2, 1);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .m-nav.is-open { transform: translateX(0); }
+
+  /* Drawer header bar (sticky inside drawer) */
+  .m-nav-head {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px; padding: 0 20px;
+    border-bottom: 1px solid rgba(242, 148, 48, 0.16);
+    position: sticky; top: 0; z-index: 1; flex-shrink: 0;
+    background: rgba(255, 251, 245, 0.97);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .m-nav-head img { height: 32px; width: auto; }
+
+  .m-nav-close {
+    background: none; border: none; cursor: pointer;
+    width: 36px; height: 36px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; line-height: 1; color: var(--text-mid);
+    transition: background .2s;
+  }
+  .m-nav-close:active { background: rgba(242, 148, 48, .12); }
+
+  /* Nav group accordion rows */
+  .m-nav-links { padding: 6px 0 24px; flex: 1; }
+  .m-nav-group { border-bottom: 1px solid rgba(242, 148, 48, .1); }
+
+  .m-nav-toggle {
+    width: 100%;
+    display: flex; align-items: center; justify-content: space-between;
+    background: none; border: none; cursor: pointer; text-align: left;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.15rem; font-weight: 600;
+    color: var(--text-dark); padding: 15px 20px;
+    transition: color .2s;
+  }
+  .m-nav-toggle .m-chev {
+    width: 18px; height: 18px; flex-shrink: 0;
+    color: var(--primary);
+    transition: transform .28s ease;
+  }
+  .m-nav-group.is-open > .m-nav-toggle { color: var(--primary); }
+  .m-nav-group.is-open .m-chev { transform: rotate(180deg); }
+
+  /* Sub-menu accordion slide */
+  .m-nav-sub {
+    max-height: 0; overflow: hidden;
+    transition: max-height .32s ease;
+    background: rgba(242, 148, 48, .04);
+  }
+  .m-nav-group.is-open > .m-nav-sub { max-height: 500px; }
+
+  .m-nav-sub a {
+    display: block;
+    padding: 12px 20px 12px 32px;
+    font-size: 0.93rem; font-weight: 600;
+    color: var(--text-mid);
+    border-top: 1px solid rgba(242, 148, 48, .08);
+    transition: color .2s, background .2s;
+  }
+  .m-nav-sub a:active { color: var(--primary); background: rgba(242, 148, 48, .1); }
+
+  /* SHOP NOW CTA — sits inside nav, below last group */
+  .m-nav-shop {
+    display: flex; align-items: center; justify-content: center;
+    margin: 20px 20px 24px; padding: 14px 24px; border-radius: 50px;
+    background: var(--primary); color: #fff; text-decoration: none;
+    font-family: 'EB Garamond', serif; font-weight: 700; font-size: 1rem;
+    letter-spacing: .02em;
+    box-shadow: 0 8px 22px rgba(242, 148, 48, .4);
+    transition: background .2s;
+  }
+  .m-nav-shop:active { background: var(--primary-dark); }
+
+  /* Lock body scroll while drawer is open */
+  body.m-nav-locked { overflow: hidden; touch-action: none; }
+
+  /* ═══════════════════════════════════════════
+     2. HERO SECTION
+  ═══════════════════════════════════════════ */
+
+  /* Use svh so the hero doesn't over-shoot on iOS (address-bar gap) */
+  .head-section { min-height: 100svh; }
+
+  /* Cut the generous desktop vertical padding */
+  .head-wrap { padding: 48px 0 60px; }
+  .head-content { max-width: 100%; }
+
+  /* Tighter headline at phone sizes */
+  .head-content h1 {
+    font-size: clamp(1.9rem, 7.8vw, 2.65rem) !important;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+  }
+
+  /* Badge margin = 4 × (1rem × 0.7 line-leading) = 2.8rem, equal top & bottom */
+  .hero-badge { margin: 2.8rem auto; }
+  .head-content .hero-para { font-size: 1rem; line-height: 1.7; }
+
+  /* Full-width stacked buttons */
+  .head-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 28px;
+  }
+  .head-actions .button {
+    width: 100%;
+    justify-content: center;
+    padding: 15px 20px;
+  }
+
+  /* 3-column stat grid (tight but readable on ≥375px) */
+  .hero-stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 10px;
+    margin-top: 36px;
+    padding-top: 28px;
+  }
+  .hero-stat-num  { font-size: 1.75rem !important; letter-spacing: -0.02em; }
+  .hero-stat-label { font-size: 0.67rem; line-height: 1.35; }
+
+  /* ═══════════════════════════════════════════
+     3. BRAND INTRO (who-container)
+  ═══════════════════════════════════════════ */
+  /* Already collapses to 1-col at 1024px; just tighten the gap */
+  .who-container { gap: 28px; }
+
+  /* ═══════════════════════════════════════════
+     4. DARK FEATURES — VIDEO + ACCORDION
+     Layout handled by existing 1024px breakpoint in style.css.
+     Only reduce the video height slightly from its default 340px.
+  ═══════════════════════════════════════════ */
+  .acc-left-right.acc-bleed .sticky-video { height: 285px !important; }
+
+  /* Tighten accordion item spacing */
+  .faq-wrap { padding: 24px 0; }
+
+  /* ═══════════════════════════════════════════
+     5. MASTERPIECE SERIES cards
+  ═══════════════════════════════════════════ */
+  /* .g-4 already → 1fr at 768px via style.css; just tune padding */
+  .agent-card { padding: 28px 22px; }
+  .agent-icon { width: 52px; height: 52px; }
+  .agent-icon svg { width: 26px; height: 26px; }
+
+  /* ═══════════════════════════════════════════
+     6. FIND YOUR DOOR  (inline-style override via class)
+  ═══════════════════════════════════════════ */
+  .find-door-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .find-door-grid > a {
+    min-height: 200px !important;
+    padding: 36px 28px !important;
+  }
+  .find-door-grid > a h3 {
+    font-size: clamp(1.3rem, 5.5vw, 1.7rem) !important;
+  }
+
+  /* ═══════════════════════════════════════════
+     7. BUYER PROOF GRID  (inline-style override via class)
+  ═══════════════════════════════════════════ */
+  .proof-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .proof-grid > div {
+    padding: 28px 24px !important;
+  }
+  .proof-grid > div h3 {
+    font-size: 1.2rem !important;
+  }
+
+  /* ═══════════════════════════════════════════
+     8. DIFFERENTIATOR STATEMENT
+  ═══════════════════════════════════════════ */
+  .media-section .sec-title {
+    font-size: clamp(1.5rem, 6.5vw, 2.2rem) !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* ═══════════════════════════════════════════
+     9. PILLAR CARDS (after-installation)
+  ═══════════════════════════════════════════ */
+  .pillar-header { margin-bottom: 40px; }
+  .pillar-scroll-wrap { gap: 16px; }
+
+  /* Collapse the 2-column card to a single column */
+  .gf-card {
+    grid-template-columns: 1fr !important;
+    padding: 32px 22px !important;
+    gap: 24px !important;
+  }
+  .gf-card:nth-child(even) .gf-content { order: unset !important; }
+  .gf-card:nth-child(even) .gf-img    { order: unset !important; }
+
+  /* Tighten icon circles */
+  .pillar-icon-wrap { width: 90px; height: 90px; }
+  .pillar-icon-wrap svg { width: 44px; height: 44px; }
+
+  /* font scale for card titles */
+  .font40r { font-size: clamp(1.25rem, 5.8vw, 1.9rem) !important; }
+
+  /* ═══════════════════════════════════════════
+     10. TESTIMONIALS
+  ═══════════════════════════════════════════ */
+  .testimonial-content-wrapper { padding: 32px 22px !important; }
+  /* Pull the decorative quote glyph in so it doesn't collide */
+  .testimonial-content-wrapper::before {
+    font-size: 5rem; top: 12px; right: 20px;
+  }
+  .testimonial-quote p { font-size: 0.94rem !important; }
+
+  /* ═══════════════════════════════════════════
+     11. FAQ ACCORDION  (inline-style padding override via class)
+  ═══════════════════════════════════════════ */
+  .faq-accordion summary {
+    padding: 18px 20px !important;
+    font-size: 0.9rem !important;
+  }
+  .faq-accordion details > div {
+    padding: 0 20px 20px !important;
+  }
+
+  /* ═══════════════════════════════════════════
+     12. PRE-FOOTER CTA
+  ═══════════════════════════════════════════ */
+  .pre-footer-wrap { min-height: 0; }
+  .pre-footer-content { padding: 40px 24px !important; }
+
+  /* Stack the button(s) full-width */
+  .pre-footer-btn {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .pre-footer-btn .button.orange {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ═══════════════════════════════════════════
+     13. FOOTER
+  ═══════════════════════════════════════════ */
+  /* footer-content already → grid-template-columns:1fr at 768px (style.css line 786) */
+  .footer { padding: 52px 0 32px; }
+
+  /* ═══════════════════════════════════════════
+     14. GLOBAL RHYTHM
+  ═══════════════════════════════════════════ */
+  .comm-section { padding: 72px 0 !important; }
+  .sec-head.centered { margin-bottom: 44px !important; }
+}
+</style>
+
+<!-- ══════════════════════════════════════════════════════════
+     PRODUCT PAGE MOBILE ADDITIONS  (from mobile-product.css)
+     Scoped 100% to ≤768px. Additive only — desktop unchanged.
+══════════════════════════════════════════════════════════ -->
+<style id="mobile-product">
+/* ══════════════════════════════════════════════════════════
+   MP DOORS — PRODUCT PAGE MOBILE ADDITIONS
+   Scoped 100% to ≤768px. Additive only — desktop unchanged.
+   Add as <style id="mobile-product"> after <style id="mobile-v4">
+   on every individual product page.
+══════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  /* ─────────────────────────────────────────────
+     SECTION 2 — BENEFIT BAR
+     Pills have padding:0 24px each + dot separators —
+     wraps into a cluttered multi-line mess on 375px.
+  ───────────────────────────────────────────── */
+  .benefit-bar { padding: 14px 0; }
+
+  .benefit-bar-inner {
+    gap: 0;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0 4px;
+  }
+
+  .benefit-pill {
+    font-size: 0.68rem;
+    padding: 3px 10px;
+  }
+
+  /* Tighten the dot separator margins */
+  .benefit-pill + .benefit-pill::before {
+    margin-right: 10px;
+  }
+
+  /* ─────────────────────────────────────────────
+     SECTION 3 — PRODUCT INTRO (who-container)
+     mobile-grid-fix collapses the 1fr 1fr inline grid ✓
+     but gap and image sizing need tuning.
+  ───────────────────────────────────────────── */
+  .who-container {
+    gap: 24px !important;
+  }
+
+  /* Image: full width, natural aspect — show the WHOLE door (no top crop) */
+  .who-left img {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    border-radius: 12px;
+  }
+
+  /* Scale down intro heading */
+  .who-right .sec-head .page-title {
+    font-size: clamp(1.4rem, 5.5vw, 1.9rem) !important;
+  }
+
+  /* ─────────────────────────────────────────────
+     SECTION 4 — STAT STRIP
+     flex gap: 40px + .stat-divider (1px vertical bar)
+     = breaks into ragged rows on mobile.
+     Fix: stack vertically, hide dividers.
+  ───────────────────────────────────────────── */
+  .stat-strip { padding: 36px 0; }
+
+  .stat-strip-inner {
+    flex-direction: column !important;
+    gap: 28px !important;
+    align-items: center;
+  }
+
+  .stat-divider { display: none !important; }
+
+  .stat-num {
+    font-size: clamp(2rem, 9vw, 3rem) !important;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    max-width: 260px;
+    margin: 6px auto 0;
+  }
+
+  /* ─────────────────────────────────────────────
+     SECTION 5 — NUMBERED FEATURES
+     .sticky-video has inline style="max-width:420px;height:420px;"
+     → 420px = 112% of a 375px viewport. Must override.
+     Also .acc-left-right has inline margin-top:80px → too much.
+  ───────────────────────────────────────────── */
+  /* Collapse to one column with a comfortable gap (mirrors the homepage's
+     number-wealth-section rhythm); trim the inline margin-top:80px. */
+  .acc-left-right {
+    margin-top: 48px !important;
+    gap: 36px !important;
+  }
+
+  /* Override the inline max-width:420px / height:420px → a contained SQUARE
+     that fits the viewport and shows the full door (no crop, no rectangle). */
+  .sticky-video {
+    max-width: 420px !important;
+    width: 100% !important;
+    height: auto !important;
+    position: static !important; /* sticky has no effect in a 1-col layout */
+    margin: 0 auto !important;
+  }
+
+  .feature-panel-wrap {
+    aspect-ratio: 1 / 1;
+    height: auto !important;
+    max-height: none !important;
+    border-radius: 12px;
+  }
+
+  .feature-panel-wrap img {
+    object-fit: contain !important;
+    height: 100% !important;
+  }
+
+  /* Numbered feature entries — match the homepage spacing */
+  .faq-wrap { padding: 24px 0; }
+
+  .list-box { font-size: 0.9rem; line-height: 1.8; }
+
+  /* ─────────────────────────────────────────────
+     SECTION 6 — SPECS TABLE
+     Already single-column by nature.
+     Just tighten cell padding for narrow viewports.
+  ───────────────────────────────────────────── */
+  .specs-table td {
+    padding: 14px 16px !important;
+    font-size: 0.825rem !important;
+    display: block;
+    width: 100%;
+  }
+
+  /* Label cell: full width label row above value */
+  .specs-table td:first-child {
+    width: 100% !important;
+    padding-bottom: 4px !important;
+    border-bottom: none !important;
+  }
+
+  .specs-table td:last-child {
+    padding-top: 4px !important;
+  }
+
+  /* ─────────────────────────────────────────────
+     SECTION 7 — CREDENTIALS GRID
+     Already → 1fr at 768px in page CSS ✓
+     Just tune cell padding.
+  ───────────────────────────────────────────── */
+  .cred-cell { padding: 28px 22px !important; }
+  .cred-icon {
+    width: 48px !important;
+    height: 48px !important;
+    margin-bottom: 14px;
+  }
+  .cred-icon svg { width: 22px !important; height: 22px !important; }
+
+  /* ─────────────────────────────────────────────
+     PARALLAX BREAK
+     background-attachment:fixed is broken on iOS Safari
+     (shows a tiny center-crop). Change to scroll on mobile.
+     Also reduce height — 340px is very tall on phones.
+  ───────────────────────────────────────────── */
+  .parallax-break {
+    height: 200px !important;
+    background-attachment: scroll !important;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  /* ─────────────────────────────────────────────
+     SECTION 8 — REVIEWS SWIPER
+     test-swiper-outer has inline padding:0 64px →
+     leaves only 247px for content on a 375px phone.
+     Remove padding; hide the prev/next arrow buttons
+     (touch-swipe is the correct mobile interaction).
+  ───────────────────────────────────────────── */
+  .test-swiper-outer {
+    padding: 0 !important;
+  }
+
+  .rev-nav { display: none !important; }
+
+  .test-section-head { margin-bottom: 36px; }
+  .test-section-head h2 {
+    font-size: clamp(1.25rem, 5.5vw, 1.8rem) !important;
+  }
+
+  /* ─────────────────────────────────────────────
+     SECTION 9 — DIFFERENTIATOR
+     Headline at clamp(2rem,4vw,3.5rem) → 2rem floor on mobile.
+     Body at 1.1rem is slightly large for narrow screens.
+  ───────────────────────────────────────────── */
+  .differentiator-section .sec-title {
+    font-size: clamp(1.4rem, 6vw, 2rem) !important;
+    margin-bottom: 20px !important;
+    line-height: 1.2;
+  }
+
+  .differentiator-section p {
+    font-size: 0.975rem !important;
+    line-height: 1.85 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .link-pill { padding: 10px 20px; font-size: 0.85rem; }
+
+  /* ─────────────────────────────────────────────
+     SECTION 10 — HEY AI ACCORDION
+     summary padding:22px 28px → 28px horizontal wastes
+     ~56px of a 375px screen. Tighten to 18px.
+  ───────────────────────────────────────────── */
+  .hey-ai-head { margin-bottom: 32px; }
+  .hey-ai-head h2 {
+    font-size: clamp(1.2rem, 5vw, 1.75rem) !important;
+  }
+
+  .hey-ai-accordion summary {
+    padding: 16px 18px !important;
+    font-size: 0.875rem !important;
+  }
+
+  .hey-ai-answer {
+    padding: 0 18px 20px !important;
+    font-size: 0.85rem !important;
+  }
+
+  /* ─────────────────────────────────────────────
+     SECTION 11 — FAQ LIGHT ACCORDION
+     Same 28px horizontal padding problem as Hey AI.
+  ───────────────────────────────────────────── */
+  .faq-section-head { margin-bottom: 36px; }
+
+  .faq-light-accordion summary {
+    padding: 16px 18px !important;
+    font-size: 0.9rem !important;
+    line-height: 1.4;
+  }
+
+  .faq-light-answer {
+    padding: 0 18px 20px !important;
+    font-size: 0.875rem !important;
+  }
+
+  /* ─────────────────────────────────────────────
+     SECTION 12 — WARRANTY TILES
+     Already → 1fr at 1024px in page CSS ✓
+     Just tighten padding.
+  ───────────────────────────────────────────── */
+  .warranty-tile {
+    padding: 28px 22px !important;
+  }
+
+  .warranty-tile-icon {
+    width: 48px !important;
+    height: 48px !important;
+    margin-bottom: 14px;
+  }
+
+  /* ─────────────────────────────────────────────
+     SECTION 13 — SHOP CTA
+     padding:100px 0 is excessive. Buttons need full width.
+  ───────────────────────────────────────────── */
+  .shop-cta-section {
+    padding: 64px 0 !important;
+  }
+
+  .shop-cta-section h2 {
+    font-size: clamp(1.4rem, 6vw, 2.2rem) !important;
+    margin-bottom: 12px;
+  }
+
+  .shop-cta-section .sub {
+    font-size: 0.95rem !important;
+    margin-bottom: 28px;
+  }
+
+  /* Full-width CTA button */
+  .shop-cta-section .button {
+    display: flex !important;
+    width: 100%;
+    justify-content: center;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+}
+</style>
+
+<!-- ══════════════════════════════════════════════════════════
+     ENTRY-PRODUCT MOBILE OVERRIDES  (from mobile-product-entry.css)
+     Portrait door photos on white bg + tan panel — entry pages only.
+     Scoped 100% to ≤768px. Additive only — desktop unchanged.
+══════════════════════════════════════════════════════════ -->
+<style id="mobile-product-entry">
+/* ══════════════════════════════════════════════════════════
+   MP DOORS — ENTRY PRODUCT PAGE MOBILE OVERRIDES
+   Entry pages use portrait door photos (white background) in a
+   tan-gradient feature panel — different from the patio pages.
+   Scoped 100% to ≤768px. Additive only — desktop unchanged.
+   Injected as <style id="mobile-product-entry"> AFTER
+   <style id="mobile-product"> on entry product pages only.
+══════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+
+  /* (1) Intro photo dominates at full width — cap and center it */
+  .who-left img {
+    max-width: 280px !important;
+    margin: 0 auto !important;
+  }
+
+  /* (2) "Materials Behind the Glass" panel:
+     the photo is white-bg, but the panel's tan gradient shows through the
+     contain-letterbox as a "yellow" band. Drop the forced square + tan —
+     let the panel hug the photo on a white background. */
+  .sticky-video { max-width: 280px !important; }
+  .feature-panel-wrap {
+    background: #ffffff !important;
+    aspect-ratio: auto !important;
+    height: auto !important;
+  }
+  .feature-panel-wrap img {
+    object-fit: contain !important;
+    height: auto !important;
+    width: 100% !important;
+  }
+}
+</style>
+
+<!-- V3: mobile overflow guard + collapse inline multi-column grids (additive, ≤768px) -->
+<style id="mobile-grid-fix">
+@media (max-width: 768px) {
+  /* stop any element from forcing horizontal scroll (white gap on the right).
+     overflow-x:clip (not hidden) so position:sticky keeps working. */
+  html, body { overflow-x: clip; }
+  [style*="repeat("],
+  [style*="1fr 1fr"],
+  [style*="1fr 2fr"],
+  [style*="2fr 1fr"],
+  [style*="1fr 1.5fr"],
+  [style*="1.5fr 1fr"] { grid-template-columns: 1fr !important; }
+}
+</style>
+
+<!-- ══ FOOTER v3 styles (additive; supersedes old .footer) ══ -->
+<style id="footer-v3">
+/* ══════════════════════════════════════════════════════════
+   MP DOORS — FOOTER v3  (warm, site-aligned)
+   Zone 1 trust strip · Zone 2 dark body · Zone 3 bottom bar.
+   Uses the site's :root vars (present on every page).
+   Injected as <style id="footer-v3"> after style.css → supersedes
+   the old .footer rules; old .footer-content/.footer-col are inert.
+══════════════════════════════════════════════════════════ */
+
+/* Zone 1 — trust strip */
+.footer-trust-strip{
+  /* fallback gradient for pages that don't define --grad-cream (e.g. impact landing) */
+  background:var(--grad-cream, linear-gradient(165deg,#FDF8F2 0%,#FBF1E5 55%,#F7E9D8 100%));
+  border-top:1px solid rgba(196,117,32,0.15);
+  padding:32px 0;
+}
+.footer-trust-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:24px; flex-wrap:wrap;
+}
+.footer-trust-facts{
+  display:flex; align-items:center; gap:36px; flex-wrap:wrap;
+}
+.footer-trust-fact{
+  display:flex; align-items:center; gap:10px;
+}
+.footer-trust-fact-icon{
+  width:34px; height:34px; flex-shrink:0; border-radius:50%;
+  background:rgba(242,148,48,0.12); display:flex; align-items:center; justify-content:center;
+}
+.footer-trust-fact-icon svg{ width:17px; height:17px; stroke:var(--primary); fill:none; }
+.footer-trust-fact span{
+  font-family:'EB Garamond',serif; font-size:0.92rem; font-weight:600;
+  color:var(--primary-deep); white-space:nowrap;
+}
+.footer-trust-cta{
+  display:inline-flex; align-items:center; gap:8px; flex-shrink:0;
+  padding:13px 28px; border-radius:50px;
+  background:var(--primary); color:#fff; font-family:'EB Garamond',serif;
+  font-weight:700; font-size:1.05rem; letter-spacing:0.04em;
+  border:2px solid var(--primary); box-shadow:0 6px 20px rgba(242,148,48,0.35);
+  transition:var(--transition);
+}
+.footer-trust-cta:hover{
+  background:var(--primary-dark); border-color:var(--primary-dark);
+  transform:translateY(-2px); box-shadow:0 10px 28px rgba(242,148,48,0.45);
+}
+.footer-trust-cta svg{ width:14px; height:14px; fill:#fff; flex-shrink:0; }
+
+/* Zone 2 — footer body */
+.footer{
+  background:linear-gradient(135deg, var(--bg-dark) 0%, #2E1200 100%);
+  padding:80px 0 0; position:relative; overflow:hidden;
+}
+.footer::before{
+  content:''; position:absolute; top:-120px; right:-80px;
+  width:600px; height:600px; border-radius:50%;
+  background:radial-gradient(circle, rgba(242,148,48,0.18) 0%, transparent 65%);
+  pointer-events:none;
+}
+.footer-body{ position:relative; z-index:1; }
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.6fr 1fr 0.9fr 1.3fr;
+  gap:56px; align-items:start;
+}
+
+/* Col 1 — brand anchor */
+.footer-brand{}
+.footer-logo-wrap{ margin-bottom:22px; }
+.footer-logo-wrap img{ height:38px; width:auto; }
+.footer-brand-stmt{
+  font-family:'EB Garamond',serif; font-style:italic; font-size:1.02rem;
+  line-height:1.75; color:rgba(255,255,255,0.70); max-width:280px; margin-bottom:22px;
+}
+.footer-thd-mention{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:'EB Garamond',serif; font-size:0.88rem;
+  color:rgba(242,148,48,0.80); letter-spacing:0.01em;
+}
+.footer-thd-mention::before{
+  content:''; display:inline-block; width:6px; height:6px;
+  background:var(--primary); border-radius:50%; flex-shrink:0;
+}
+
+/* Col 2, 3 — nav columns */
+.footer-col-head{
+  font-family:'EB Garamond',serif; font-size:1.05rem; font-weight:600;
+  letter-spacing:0.01em; margin-bottom:22px; display:block;
+  background:linear-gradient(140deg, #FFF6EA 22%, var(--accent) 62%, var(--primary) 100%);
+  -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+}
+.footer-nav-list{ display:flex; flex-direction:column; gap:12px; list-style:none; }
+.footer-nav-list a{
+  font-family:'EB Garamond',serif; font-size:1rem; color:rgba(255,255,255,0.62);
+  display:flex; align-items:center; gap:8px; transition:var(--transition);
+}
+.footer-nav-list a:hover{ color:var(--primary); padding-left:4px; }
+.footer-nav-list a svg{ width:11px; height:11px; stroke:currentColor; fill:none; flex-shrink:0; opacity:0.5; }
+.footer-nav-list a:hover svg{ opacity:1; }
+
+/* Col 4 — where to buy */
+.footer-buy{}
+.footer-buy-stmt{
+  font-family:'EB Garamond',serif; font-style:italic; font-size:0.97rem;
+  line-height:1.75; color:rgba(255,255,255,0.68); margin-bottom:26px;
+}
+.footer-shop-btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:14px 30px; border-radius:50px;
+  background:#fff; color:var(--text-dark);
+  font-family:'EB Garamond',serif; font-weight:700;
+  font-size:1.05rem; letter-spacing:0.04em;
+  box-shadow:0 6px 20px rgba(0,0,0,0.22);
+  transition:var(--transition); margin-bottom:22px; white-space:nowrap;
+}
+.footer-shop-btn:hover{ background:#F2EADD; transform:translateY(-2px); box-shadow:0 10px 28px rgba(0,0,0,0.30); }
+.footer-shop-btn svg{ width:13px; height:13px; stroke:var(--text-dark); fill:none; }
+.footer-support-hint{
+  font-size:0.82rem; font-family:'EB Garamond',serif;
+  color:rgba(255,255,255,0.42); line-height:1.65;
+}
+.footer-support-hint a{
+  color:rgba(242,148,48,0.72); border-bottom:1px solid rgba(242,148,48,0.25);
+  padding-bottom:1px; transition:var(--transition);
+}
+.footer-support-hint a:hover{ color:var(--primary); border-color:var(--primary); }
+
+/* Zone 3 — bottom bar */
+.footer-bottom{
+  position:relative; z-index:1;
+  display:flex; justify-content:space-between; align-items:center;
+  flex-wrap:wrap; gap:12px;
+  margin-top:64px; padding:22px 0;
+  border-top:1px solid rgba(255,255,255,0.07);
+}
+.footer-bottom-left{
+  display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+}
+.footer-bottom-left p{
+  font-size:0.76rem; color:rgba(255,255,255,0.32);
+  font-family:'Open Sans',sans-serif;
+}
+.footer-bottom-left .footer-bottom-sep{
+  width:3px; height:3px; border-radius:50%;
+  background:rgba(255,255,255,0.18); flex-shrink:0;
+}
+.footer-bottom-left .footer-thd-bottom{
+  font-size:0.76rem; color:rgba(242,148,48,0.45);
+  font-family:'Open Sans',sans-serif;
+}
+.footer-bottom-links{ display:flex; gap:20px; align-items:center; }
+.footer-bottom-links a{
+  font-size:0.76rem; color:rgba(255,255,255,0.28);
+  font-family:'Open Sans',sans-serif; transition:var(--transition);
+}
+.footer-bottom-links a:hover{ color:rgba(255,255,255,0.60); }
+.footer-bottom-links .dot-sep{
+  font-size:0.5rem; color:rgba(255,255,255,0.18);
+}
+
+/* footer responsive */
+@media(max-width:1024px){
+  .footer-grid{ grid-template-columns:1fr 1fr; gap:44px; }
+  .footer-trust-facts{ gap:24px; }
+}
+@media(max-width:768px){
+  .footer-grid{ grid-template-columns:1fr; gap:36px; }
+  .footer-trust-inner{ flex-direction:column; align-items:flex-start; gap:20px; }
+  .footer-trust-facts{ flex-direction:column; gap:16px; }
+  .footer-trust-fact span{ white-space:normal; }
+  .footer-bottom{ flex-direction:column; align-items:flex-start; gap:10px; }
+}
+
+/* ── finalized adjustments (merged from review) ── */
+.footer-logo-wrap img { height: 50px; }                      /* was 38px */
+.footer-brand-stmt { font-weight: 700; font-size: 1.12rem; } /* bold + larger, keeps italic */
+.footer-trust-fact span { font-size: 1.05rem; }              /* base/mobile */
+@media (min-width: 769px) { .footer-trust-fact span { font-size: 1.2rem; } }  /* desktop bigger */
+@media (max-width: 768px) { .footer-trust-facts { align-items: flex-start; } } /* mobile: align icons at start */
 </style>
 </head>
 <body>
@@ -647,48 +1513,105 @@ h1,h2,h3,h4,h5{line-height:1.2;}.sec-title{font-size:clamp(2rem,4vw,3.5rem);font
 </main>
 
 <!-- FOOTER -->
+<!-- ═══════════════════════════════════════ FOOTER v3 — Zone 1: Trust strip ═══════════════════════════════════════ -->
+<div class="footer-trust-strip">
+  <div class="container">
+    <div class="footer-trust-inner">
+
+      <div class="footer-trust-facts">
+        <div class="footer-trust-fact">
+          <div class="footer-trust-fact-icon">
+            <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+          </div>
+          <span>Won't rot, warp, or rust</span>
+        </div>
+        <div class="footer-trust-fact">
+          <div class="footer-trust-fact-icon">
+            <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6.5 7 1-5 4.8 1.2 7L12 18l-6.2 3.3L7 14.3 2 9.5l7-1z"/></svg>
+          </div>
+          <span>Energy Star Certified</span>
+        </div>
+        <div class="footer-trust-fact">
+          <div class="footer-trust-fact-icon">
+            <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <span>Limited Lifetime Warranty</span>
+        </div>
+      </div>
+
+      <a href="https://www.homedepot.com" class="footer-trust-cta">
+        SHOP NOW AT HOME DEPOT
+        <svg viewBox="0 0 24 24" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ FOOTER v3 — Zone 2: Body ═══════════════════════════════════════ -->
 <footer class="footer" id="footer">
   <div class="container">
-    <div class="footer-content" style="grid-template-columns:1.5fr repeat(3, 1fr);">
+    <div class="footer-body">
+      <div class="footer-grid">
 
-      <section class="company-info">
-        <div class="footer-logo">
-          <img src="/assets/images/MPDoors_Logo.png" alt="MP Doors" style="height:36px;width:auto;">
-        </div>        
-        <p style="font-size:0.825rem;color:rgba(255,255,255,0.55);line-height:1.8;max-width:280px;">Composite patio and entry doors — MasterPiece Series.</p>
-      </section>
+        <!-- Col 1 — Brand Anchor -->
+        <div class="footer-brand">
+          <div class="footer-logo-wrap">
+            <img src="/assets/images/MPDoors_Logo.png" alt="MP Doors" onerror="this.style.opacity='0'">
+          </div>
+          <p class="footer-brand-stmt">Fiberglass panels and composite frames. Waterproof entry and patio doors, exclusively at The Home Depot.</p>
+        </div>
 
-      <div class="footer-col">
-        <h4>Patio Doors</h4>
-        <ul>
-          <li><a href="/doors/patio-doors/hinged-full-lite/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Hinged Full Lite</a></li>
-          <li><a href="/doors/patio-doors/full-lite-gliding/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Full Lite Gliding</a></li>
-          <li><a href="/doors/patio-doors/impact-hinged/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Impact Hinged</a></li>
-        </ul>
+        <!-- Col 2 — MP Doors navigation -->
+        <div>
+          <span class="footer-col-head">MP Doors</span>
+          <ul class="footer-nav-list">
+            <li><a href="/doors/patio-doors/#gliding"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Gliding Patio Doors</a></li>
+            <li><a href="/doors/patio-doors/#hinged"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Hinged Patio Doors</a></li>
+            <li><a href="/doors/impact-doors/"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Impact Doors — Florida</a></li>
+            <li><a href="/doors/entry-doors/"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Entry Doors</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3 — Support -->
+        <div>
+          <span class="footer-col-head">Support</span>
+          <ul class="footer-nav-list">
+            <li><a href="/warranty-support/"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Warranty &amp; Support</a></li>
+            <li><a href="/warranty-support/#installation"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Measure &amp; Install Guide</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4 — Where to Buy -->
+        <div class="footer-buy">
+          <span class="footer-col-head">Where to Buy</span>
+          <p class="footer-buy-stmt">Every MP Doors model is available in-store and online at The Home Depot — no special order, no wait.</p>
+          <a href="https://www.homedepot.com" class="footer-shop-btn">
+            SHOP NOW
+            <svg viewBox="0 0 24 24" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <p class="footer-support-hint">Need help choosing? Visit our <a href="/warranty-support/">Warranty &amp; Support</a> page.</p>
+        </div>
+
       </div>
-
-      <div class="footer-col">
-        <h4>Entry Doors</h4>
-        <ul>
-          <li><a href="/doors/entry-doors/oval-lite-34/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Oval Lite</a></li>
-          <li><a href="/doors/entry-doors/modern-full-lite/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Modern Full Lite</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="/why-composite/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Why Composite</a></li>
-          <li><a href="/warranty-support/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Warranty &amp; Support</a></li>
-          <li><a href="/warranty-support/#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>Contact</a></li>
-        </ul>
-      </div>
-
     </div>
 
+    <!-- Zone 3 — Bottom bar -->
     <div class="footer-bottom">
-      <p>© 2025 Nan Ya Plastics Corporation USA. All rights reserved. MP Doors sold exclusively at The Home Depot.</p>
+      <div class="footer-bottom-left">
+        <p>© 2026 MP Doors. All rights reserved.</p>
+        <span class="footer-bottom-sep"></span>
+        <span class="footer-thd-bottom">Sold exclusively at The Home Depot</span>
+      </div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <span class="dot-sep">●</span>
+        <a href="#">Terms</a>
+        <span class="dot-sep">●</span>
+        <a href="/warranty-support/">Warranty</a>
+      </div>
     </div>
+
   </div>
 </footer>
 
@@ -703,5 +1626,124 @@ const counterObserver=new IntersectionObserver((entries)=>{entries.forEach(entry
 document.querySelectorAll('.stat-counter').forEach(el=>counterObserver.observe(el));
 document.querySelector('.hamburger').addEventListener('click',function(){const nav=document.querySelector('.head-right');if(nav){nav.style.display=nav.style.display==='flex'?'none':'flex';}});
 </script>
+
+<!-- ═══ MOBILE NAV DRAWER (V3) ═══ -->
+<div class="m-nav-overlay" id="mNavOverlay"></div>
+<aside class="m-nav" id="mNav" aria-hidden="true" aria-label="Mobile navigation">
+
+  <div class="m-nav-head">
+    <img src="/assets/images/MPDoors_Logo.png" alt="MP Doors">
+    <button class="m-nav-close" id="mNavClose" aria-label="Close navigation">&#x2715;</button>
+  </div>
+
+  <nav class="m-nav-links">
+
+    <div class="m-nav-group">
+      <button class="m-nav-toggle" aria-expanded="false">Doors
+        <svg class="m-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="m-nav-sub">
+        <a href="/doors/entry-doors/">Entry Doors</a>
+        <a href="/doors/patio-doors/#gliding">Gliding Patio Doors</a>
+        <a href="/doors/patio-doors/#hinged">Hinged Patio Doors</a>
+        <a href="/doors/impact-doors/">Impact Doors</a>
+      </div>
+    </div>
+
+    <div class="m-nav-group">
+      <button class="m-nav-toggle" aria-expanded="false">Why MP Doors
+        <svg class="m-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="m-nav-sub">
+        <a href="/why-composite/">Material Comparison</a>
+        <a href="/why-composite/#hydroshield">HydroShield™ Protection</a>
+        <a href="/why-composite/#certifications">Testing &amp; Certifications</a>
+      </div>
+    </div>
+
+    <div class="m-nav-group">
+      <button class="m-nav-toggle" aria-expanded="false">Real Projects
+        <svg class="m-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="m-nav-sub">
+        <a href="/real-projects/">Browse by Climate</a>
+        <a href="/real-projects/">Browse by Style</a>
+        <a href="/real-projects/">Installation Stories</a>
+      </div>
+    </div>
+
+    <div class="m-nav-group">
+      <button class="m-nav-toggle" aria-expanded="false">Support &amp; Guides
+        <svg class="m-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="m-nav-sub">
+        <a href="/warranty-support/#installation">Measurement &amp; Installation</a>
+        <a href="/warranty-support/">Care, Warranty &amp; FAQ</a>
+        <a href="/warranty-support/#contact">Contact Us</a>
+      </div>
+    </div>
+
+    <a href="https://www.homedepot.com" class="m-nav-shop">SHOP NOW →</a>
+
+  </nav>
+
+</aside>
+
+<!-- V3 mobile nav drawer controller (additive) -->
+<script>
+(function () {
+  var hamburger = document.querySelector('.hamburger');
+  var nav       = document.getElementById('mNav');
+  var overlay   = document.getElementById('mNavOverlay');
+  var closeBtn  = document.getElementById('mNavClose');
+
+  if (!hamburger || !nav) return;
+
+  function openNav() {
+    hamburger.classList.add('is-open');
+    nav.classList.add('is-open');
+    overlay.classList.add('is-open');
+    document.body.classList.add('m-nav-locked');
+    nav.setAttribute('aria-hidden', 'false');
+  }
+  function closeNav() {
+    hamburger.classList.remove('is-open');
+    nav.classList.remove('is-open');
+    overlay.classList.remove('is-open');
+    document.body.classList.remove('m-nav-locked');
+    nav.setAttribute('aria-hidden', 'true');
+  }
+
+  hamburger.addEventListener('click', function () {
+    nav.classList.contains('is-open') ? closeNav() : openNav();
+  });
+  if (closeBtn) closeBtn.addEventListener('click', closeNav);
+  if (overlay)  overlay.addEventListener('click', closeNav);
+
+  document.querySelectorAll('.m-nav-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var group  = this.closest('.m-nav-group');
+      var isOpen = group.classList.contains('is-open');
+      document.querySelectorAll('.m-nav-group').forEach(function (g) {
+        g.classList.remove('is-open');
+        g.querySelector('.m-nav-toggle').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        group.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  nav.querySelectorAll('.m-nav-sub a, .m-nav-shop').forEach(function (a) {
+    a.addEventListener('click', closeNav);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeNav();
+  });
+})();
+</script>
+
 </body>
 </html>
