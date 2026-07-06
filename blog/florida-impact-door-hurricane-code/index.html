@@ -4,8 +4,8 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1"/>
 
-<title>Real Projects | MP Doors</title>
-<meta name="description" content="Real MP Doors installations from homeowners across every U.S. climate zone."/>
+<title>Florida Hurricane Season: Does Your Patio Door Meet Code? | MP Doors Blog</title>
+<meta name="description" content="Is your Florida patio door rated for its windborne debris zone? How FBC product approval works, what FL-29714 (DP +50/−50, TAS 201/202/203) means, and how to confirm the right MP Doors Impact Hinged configuration before you order."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
@@ -539,6 +539,223 @@
 @media (min-width: 769px) { .footer-trust-fact span { font-size: 1.2rem; } }  /* desktop bigger */
 @media (max-width: 768px) { .footer-trust-facts { align-items: flex-start; } } /* mobile: align icons at start */
 </style>
+<!-- Blog / article styles (warm, site-aligned; echoes the product hero) -->
+<style id="blog-style">
+.article-hero{ position:relative; overflow:hidden; background:linear-gradient(135deg,var(--bg-dark) 0%,#2E1200 100%); padding:220px 0 142px; }
+.article-hero::before{ content:''; position:absolute; top:-140px; right:-110px; width:620px; height:620px; border-radius:50%; background:radial-gradient(circle, rgba(242,148,48,0.18) 0%, transparent 62%); pointer-events:none; }
+/* second glow, centred behind the title, so the heading feels illuminated */
+.article-hero::after{ content:''; position:absolute; top:38%; left:50%; transform:translate(-50%,-50%); width:760px; height:420px; background:radial-gradient(ellipse at center, rgba(242,148,48,0.16) 0%, transparent 68%); pointer-events:none; }
+.article-hero .hero-hex-grid{ opacity:0.22; }
+/* centred hero content (matches the product-page hero) */
+.article-hero-inner{ position:relative; z-index:1; max-width:820px; margin:0 auto; text-align:center; }
+.article-title{ font-family:'Merriweather',serif; font-weight:700; color:#fff; font-size:clamp(2rem,4.6vw,3.15rem); line-height:1.16; letter-spacing:-0.015em;
+  /* gap to the badge = 4× the .article-meta line-height (0.92rem × 1.5) */
+  margin-bottom:calc(0.92rem * 1.5 * 4);
+  text-shadow:0 0 9px rgba(255,255,255,0.75), 0 0 20px rgba(242,148,48,0.6), 0 2px 18px rgba(0,0,0,0.35); }
+.article-hero .hero-badge{ margin:0 auto; }
+/* meta line-height is the 1× baseline; its top gap to the badge = 4× that */
+.article-meta{ font-family:'Open Sans',sans-serif; font-size:0.92rem; line-height:1.5; color:rgba(255,255,255,0.6); margin-top:calc(0.92rem * 1.5 * 4); }
+.article-meta strong{ color:rgba(255,255,255,0.85); font-weight:600; }
+.article-meta a{ color:var(--primary); font-weight:600; }
+
+.article-wrap{ background:var(--grad-soft); padding-bottom:96px; }
+.img-placeholder{ color:#9a8467; font-family:'EB Garamond',serif; font-size:0.95rem; text-align:center; padding:20px; }
+
+.article-body{ max-width:760px; margin:0 auto; padding:76px 0 0; }
+.article-body > p{ font-family:'Open Sans',sans-serif; font-size:1.08rem; line-height:1.86; color:#3c2a1b; margin-bottom:1.5rem; }
+/* lede — first paragraph reads larger, like the product-page intro */
+.article-body > p:first-of-type{ font-size:1.22rem; line-height:1.82; color:var(--text-dark); border-top:4px solid #F29430; padding-top:1.5rem; }
+.article-figure{ margin:2.6rem 0; border-radius:16px; overflow:hidden; box-shadow:var(--shadow); background:#EFE3D2; }
+.article-figure img{ width:100%; height:auto; display:block; }
+.article-body h2{ font-family:'Merriweather',serif; font-weight:700; font-size:clamp(1.4rem,2.6vw,1.9rem); color:var(--text-dark); line-height:1.3; margin:2.7rem 0 1rem; }
+.article-body strong{ color:var(--text-dark); font-weight:700; }
+.article-body a{ color:var(--primary-dark); font-weight:600; text-decoration:underline; text-underline-offset:2px; text-decoration-color:rgba(242,148,48,0.5); transition:var(--transition); }
+.article-body a:hover{ color:var(--primary); text-decoration-color:var(--primary); }
+.article-body ul{ list-style:none; padding-left:0; margin:0 0 1.5rem; }
+.article-body li{ position:relative; padding-left:26px; margin-bottom:0.7rem; font-size:1.08rem; line-height:1.75; color:#3c2a1b; }
+.article-body li::before{ content:'›'; position:absolute; left:6px; top:-1px; color:var(--primary); font-weight:700; font-size:1.25rem; }
+
+.article-callout{ background:linear-gradient(155deg,#FFFFFF,#FFF7EC); border:2px solid rgba(242,148,48,0.34); border-left:6px solid var(--primary); border-radius:14px; padding:26px 28px; margin:0.4rem 0 1.9rem; box-shadow:var(--shadow); }
+.article-callout h3{ font-family:'Merriweather',serif; font-size:1.02rem; color:var(--text-dark); margin-bottom:16px; }
+.article-callout .cert-row{ display:flex; gap:14px; align-items:baseline; margin-bottom:11px; font-size:0.98rem; color:#3c2a1b; line-height:1.5; }
+.article-callout .cert-row:last-child{ margin-bottom:0; }
+.article-callout .cert-row b{ color:var(--primary-deep); font-weight:700; flex-shrink:0; min-width:88px; }
+.article-callout .cert-num{ font-family:'Merriweather',serif; font-size:1.25rem; font-weight:700; color:var(--primary-dark); }
+
+.article-cta{ margin:72px auto 0; max-width:760px; background:linear-gradient(155deg,#2E1500,#200d00); border-radius:18px; padding:64px 56px; text-align:center; position:relative; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,0.28); }
+.article-cta::after{ content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 50% at 85% 15%, rgba(242,148,48,0.16), transparent 55%); pointer-events:none; }
+.article-cta h3{ font-family:'Merriweather',serif; color:#fff; font-size:clamp(1.35rem,2.4vw,1.75rem); margin-bottom:18px; position:relative; }
+.article-cta p{ color:rgba(255,255,255,0.72); font-size:1rem; line-height:1.75; margin:0 auto 36px; max-width:560px; position:relative; }
+.article-cta .cta-actions{ display:flex; gap:18px; justify-content:center; flex-wrap:wrap; position:relative; }
+/* glowing CTA buttons — echoes the article title's white + orange radiance */
+.article-cta .cta-actions .button{ box-shadow:0 0 12px rgba(255,255,255,0.30), 0 0 26px rgba(242,148,48,0.55), 0 0 52px rgba(242,148,48,0.30); transition:box-shadow .3s ease, transform .3s ease; }
+.article-cta .cta-actions .button:hover{ transform:translateY(-2px); box-shadow:0 0 16px rgba(255,255,255,0.45), 0 0 36px rgba(242,148,48,0.72), 0 0 68px rgba(242,148,48,0.42); }
+
+/* Blog index — featured card + grid */
+.blog-section{ background:var(--white); padding:72px 0 100px; }
+.blog-featured{ display:grid; grid-template-columns:1.05fr 1fr; background:var(--white); border:1px solid var(--grey-border); border-radius:var(--radius-lg); overflow:hidden; text-decoration:none; box-shadow:var(--shadow-soft); transition:var(--transition); }
+.blog-featured:hover{ transform:translateY(-4px); box-shadow:var(--shadow); border-color:rgba(242,148,48,0.3); }
+.blog-featured-img{ min-height:340px; background:linear-gradient(135deg,#EFE3D2,#E3D2BB); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+.blog-featured-img img{ width:100%; height:100%; object-fit:cover; display:block; }
+.blog-featured-body{ padding:48px 44px; display:flex; flex-direction:column; justify-content:center; gap:14px; }
+.blog-featured-meta{ font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--primary); }
+.blog-featured-body h2{ font-family:'Merriweather',serif; font-size:clamp(1.4rem,2.4vw,2rem); line-height:1.3; color:var(--text-dark); }
+.blog-featured-body p{ font-size:1rem; color:var(--text-mid); line-height:1.7; }
+.blog-featured-cta{ margin-top:6px; font-size:0.78rem; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:var(--primary); display:inline-flex; align-items:center; gap:6px; }
+.blog-featured:hover .blog-featured-cta{ gap:11px; }
+
+@media (max-width:768px){
+  .article-hero{ padding:158px 0 94px; }
+  .article-hero::after{ width:110%; }
+  .article-body{ padding-top:48px; }
+  .article-body > p, .article-body li{ font-size:1rem; line-height:1.8; }
+  .article-body > p:first-of-type{ font-size:1.1rem; }
+  .article-figure{ margin:2rem 0; border-radius:12px; }
+  .article-callout{ padding:22px 20px; }
+  .article-callout .cert-row{ flex-direction:column; gap:2px; }
+  .article-cta{ padding:48px 26px; }
+  .blog-featured{ grid-template-columns:1fr; }
+  .blog-featured-img{ min-height:210px; }
+  .blog-featured-body{ padding:30px 24px; }
+}
+</style>
+<style id="redesign">
+.mp-redesign{font-family:'EB Garamond',serif;color:var(--text,#1A0800);}
+.mp-redesign img{max-width:100%;height:auto;}
+.mp-redesign .article-cta a,.mp-redesign .button{text-decoration:none;}
+:root{--bg:#FFFBF5;--bg-card:rgba(255,255,255,0.55);--bg-card-hover:rgba(255,255,255,0.78);--border:rgba(196,117,32,0.16);--border-hover:rgba(242,148,48,0.35);--cyan:#F29430;--lav:#F29430;--text:#1A0800;--text-muted:#5A3010;--glow-blue:#FF9F50;}
+.mp-redesign ul, .mp-redesign ol{padding-inline-start:1.5rem;margin:0.5rem 0;}
+.mp-redesign li{margin-bottom:0.3rem;}
+.mp-redesign a{color:var(--cyan);text-decoration:underline;}
+.mp-redesign a:hover{text-decoration:none;}
+.mp-redesign .highlight-glow{color:#C47520;text-shadow:0 0 16px rgba(196,117,32,0.6),0 0 32px rgba(196,117,32,0.3);}
+.mp-redesign .text-glow-blue{color:var(--cyan);text-shadow:0 0 12px rgba(242,148,48,0.55),0 0 28px rgba(242,148,48,0.25);}
+.mp-redesign .glow-title{color:#FF9F50;text-shadow:0 0 20px rgba(255,159,80,0.6),0 0 48px rgba(255,159,80,0.3),0 0 80px rgba(255,159,80,0.15);}
+.mp-redesign .notice-glow{color:#fff;text-shadow:0 0 4px #fff,0 0 8px #fff;opacity:0.85;}
+.mp-redesign .glow-white-purple{color:#fff;text-shadow:0 0 6px #F29430,0 0 12px #F29430,0 0 22px rgba(242,148,48,0.45);opacity:0.9;}
+.mp-redesign .accent{color:var(--cyan);}
+.mp-redesign .glass{background:var(--bg-card);border:1px solid var(--border);border-radius:18px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+.mp-redesign .glass-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);}
+.mp-redesign .section-title{font-family:'Merriweather',serif;font-size:1.5rem;font-weight:600;text-align:center;margin-bottom:1.8rem;color:var(--text);}
+.mp-redesign .section-title .accent{color:var(--cyan);}
+.mp-redesign .section-wrap{max-width:900px;margin:0 auto;padding:0 1.5rem;}
+.mp-redesign .ornament{text-align:center;color:rgba(242,148,48,0.28);font-size:0.85rem;letter-spacing:0.45em;margin:1.8rem 0;user-select:none;}
+.mp-redesign .approach-block{padding:2.8rem 3rem;margin:2rem auto;max-width:900px;}
+.mp-redesign .approach-block p{font-size:1.06rem;line-height:1.88;color:var(--text-muted);margin-bottom:1.1rem;}
+.mp-redesign .approach-block p:last-child{margin-bottom:0;}
+.mp-redesign .approach-block em{color:var(--text);font-style:italic;}
+.mp-redesign .approach-block strong{color:var(--lav);font-weight:400;}
+.mp-redesign .glow{position:relative;overflow:visible;}
+.mp-redesign .glow::before{content:'';position:absolute;inset:-14px;border-radius:calc(18px + 14px);background:linear-gradient(140deg,rgba(139,82,0,0.9),rgba(242,148,48,0.9),rgba(255,159,80,0.9));filter:blur(22px);opacity:0.45;z-index:-1;pointer-events:none;animation:mpGlowPulse 3s ease-in-out infinite;}
+@keyframes mpGlowPulse{0%,100%{opacity:0.35;filter:blur(22px);}50%{opacity:0.65;filter:blur(30px);}}
+.mp-redesign .border-glow-subtle{box-shadow:0 0 0 1px rgba(242,148,48,0.5),0 0 12px rgba(242,148,48,0.45),0 0 28px rgba(242,148,48,0.18);}
+.mp-redesign .border-glow-bold{box-shadow:0 0 0 1.5px rgba(242,148,48,0.7),0 0 10px rgba(242,148,48,0.85),0 0 24px rgba(242,148,48,0.55),0 0 48px rgba(242,148,48,0.22);}
+.mp-redesign .cards-grid{display:grid;gap:1.2rem;max-width:900px;margin:2rem auto;padding:0 1.5rem;}
+.mp-redesign .feat-card{padding:1.8rem 1.9rem;}
+.mp-redesign .card-icon{font-size:1.5rem;margin-bottom:0.75rem;}
+.mp-redesign .feat-card h3{font-family:'Merriweather',serif;font-size:0.88rem;font-weight:600;color:var(--lav);letter-spacing:0.07em;margin-bottom:0.65rem;}
+.mp-redesign .feat-card p{font-size:0.97rem;line-height:1.78;color:var(--text-muted);}
+.mp-redesign .tag-strip{display:flex;flex-wrap:wrap;gap:0.5rem;justify-content:center;padding:1.6rem 2rem;}
+.mp-redesign .tag{font-family:'Open Sans',sans-serif;font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.32rem 0.85rem;border-radius:100px;white-space:nowrap;border:1px solid rgba(242,148,48,0.30);color:var(--lav);background:rgba(242,148,48,0.07);}
+.mp-redesign .tag-cyan{color:var(--cyan);border-color:rgba(242,148,48,0.35);background:rgba(242,148,48,0.07);}
+.mp-redesign .tag-rose{color:#E0A458;border-color:rgba(224,164,88,0.35);background:rgba(224,164,88,0.07);}
+.mp-redesign .cta-block{text-align:center;padding:3rem 2.5rem;background:linear-gradient(135deg,#1A0800 0%,#2E1200 100%);border-radius:24px;}
+.mp-redesign .cta-block h2{font-family:'Merriweather',serif;font-size:clamp(1.5rem,4vw,2.1rem);font-weight:600;letter-spacing:0.03em;margin-bottom:1rem;color:#fff;}
+.mp-redesign .cta-block h2 .accent{color:var(--cyan);}
+.mp-redesign .cta-block p{font-size:1.02rem;line-height:1.75;color:rgba(255,255,255,0.72);max-width:520px;margin:0 auto 2.2rem;}
+.mp-redesign .btn-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.mp-redesign .btn{display:inline-block;font-family:'Open Sans',sans-serif;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.82rem 2rem;border-radius:100px;text-decoration:none;cursor:pointer;transition:all 0.2s;border:none;}
+.mp-redesign .btn-primary{background:var(--cyan);color:#1A0800;font-weight:600;box-shadow:0 0 20px rgba(242,148,48,0.30);}
+.mp-redesign .btn-primary:hover{box-shadow:0 0 32px rgba(242,148,48,0.55);transform:translateY(-2px);}
+.mp-redesign .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.22);}
+.mp-redesign .btn-ghost:hover{border-color:var(--cyan);color:var(--cyan);}
+.mp-redesign .image-block-wrap{margin:0.5rem 0;}
+.mp-redesign .category-pill{display:inline-block;font-size:0.62rem;font-weight:600;letter-spacing:0.10em;text-transform:uppercase;padding:0.2rem 0.7rem;border-radius:100px;margin-bottom:0.5rem;}
+.mp-redesign .pill-musical{color:#F29430;border:1px solid rgba(242,148,48,0.35);background:rgba(242,148,48,0.08);}
+.mp-redesign .pill-non-musical{color:#F29430;border:1px solid rgba(242,148,48,0.30);background:rgba(242,148,48,0.07);}
+.mp-redesign .demo-card{display:block;text-decoration:none;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:rgba(0,0,0,0.25);transition:transform 0.22s,border-color 0.22s;max-width:440px;margin:0 auto;}
+.mp-redesign .demo-card:hover{transform:translateY(-4px);border-color:rgba(242,148,48,0.28);}
+.mp-redesign .demo-thumb{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:#120600;}
+.mp-redesign .demo-thumb img{width:100%;height:100%;object-fit:cover;display:block;opacity:0.80;transition:opacity 0.22s;}
+.mp-redesign .demo-card:hover .demo-thumb img{opacity:1;}
+.mp-redesign .play-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+.mp-redesign .play-btn{width:50px;height:50px;border-radius:50%;background:rgba(0,0,0,0.42);border:2px solid var(--cyan);display:flex;align-items:center;justify-content:center;transition:background 0.2s,transform 0.2s;}
+.mp-redesign .play-btn svg{width:18px;fill:var(--cyan);margin-left:3px;}
+.mp-redesign .demo-card:hover .play-btn{background:rgba(242,148,48,0.22);transform:scale(1.1);}
+.mp-redesign .demo-caption{padding:0.8rem 1rem;}
+.mp-redesign .demo-title{font-family:'EB Garamond',serif;font-size:1.15rem;color:var(--text);display:block;margin-bottom:0.15rem;}
+.mp-redesign .demo-genre{font-family:'Open Sans',sans-serif;font-size:0.58rem;letter-spacing:0.10em;text-transform:uppercase;color:var(--lav);}
+.mp-redesign .image-caption{font-family:'EB Garamond',serif;font-size:0.88rem;color:var(--text-muted);text-align:center;margin-top:0.5rem;font-style:italic;}
+.mp-redesign .video-wrap{margin:0.5rem 0;border-radius:12px;overflow:hidden;}
+.mp-redesign nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(26,8,0,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.08);}
+.mp-redesign .nav-inner{max-width:1200px;margin:0 auto;padding:0.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;}
+.mp-redesign .site-name{font-family:'Merriweather',serif;font-size:1.5rem;font-weight:500;color:#fff;text-decoration:none;}
+.mp-redesign .nav-links{display:flex;gap:2rem;}
+.mp-redesign .nav-link{color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.9rem;transition:color 0.2s;}
+.mp-redesign .nav-link:hover{color:#fff;}
+.mp-redesign footer{padding:3rem 1.5rem;border-top:1px solid rgba(255,255,255,0.08);margin-top:4rem;background:linear-gradient(135deg,#1A0800 0%,#2E1200 100%);}
+.mp-redesign .footer-inner{max-width:900px;margin:0 auto;text-align:center;}
+.mp-redesign .footer-quote{font-family:'EB Garamond',serif;font-size:1.05rem;color:rgba(255,255,255,0.72);line-height:1.8;margin-bottom:1.5rem;font-style:italic;}
+.mp-redesign .footer-contact a{color:var(--lav);text-decoration:none;font-size:1.1rem;}
+.mp-redesign .footer-copy{font-size:0.8rem;color:rgba(255,255,255,0.45);margin-top:1.5rem;}
+.mp-redesign{max-width:900px;margin:0 auto;padding:6rem 1.5rem 4rem;}
+.mp-redesign a{color:var(--cyan);text-decoration:underline;text-underline-offset:2px;}
+.mp-redesign .pc-hero{min-height:55vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 2rem;border-radius:24px;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(242,148,48,.14) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 20% 70%,rgba(242,148,48,.10) 0%,transparent 50%),linear-gradient(135deg,#1A0800 0%,#2E1200 100%);position:relative;overflow:hidden;}
+.mp-redesign .pc-hero-inner{max-width:780px;margin:0 auto;position:relative;}
+.mp-redesign .pc-hero-tag{display:inline-block;font-family:'Open Sans',sans-serif;font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--cyan);border:1px solid rgba(242,148,48,.30);border-radius:30px;padding:.35rem 1.1rem;margin-bottom:1.6rem;}
+.mp-redesign .pc-hero h1{font-family:'Merriweather',serif;font-size:clamp(2.4rem,6vw,4rem);font-weight:700;line-height:1.15;margin-bottom:1.2rem;background:linear-gradient(135deg,#fff 40%,var(--cyan) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.mp-redesign .pc-hero-subtitle{font-family:'EB Garamond',serif;font-size:clamp(1.1rem,2.5vw,1.4rem);font-style:italic;color:rgba(255,255,255,0.72);margin-bottom:2.2rem;font-weight:300;}
+.mp-redesign .pc-hero-cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.mp-redesign .pc-btn{font-family:'Open Sans',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:.75rem 1.8rem;border-radius:8px;text-decoration:none;transition:all .25s;display:inline-block;cursor:pointer;}
+.mp-redesign .pc-btn-primary{background:linear-gradient(135deg,#C47520,var(--cyan));color:#1A0800;border:none;font-weight:700;}
+.mp-redesign .pc-btn-outline{background:transparent;color:var(--lav);border:1px solid rgba(242,148,48,.40);}
+.mp-redesign .pc-pull-quote-wrap{max-width:760px;margin:0 auto;padding:0 2rem;}
+.mp-redesign .pc-pull-quote{padding:2.5rem 3rem;border-left:3px solid var(--cyan);background:rgba(242,148,48,.04);border-radius:0 14px 14px 0;}
+.mp-redesign .pc-pull-quote blockquote{font-family:'EB Garamond',serif;font-style:italic;font-size:clamp(1.15rem,2.5vw,1.4rem);color:var(--text);font-weight:300;line-height:1.75;}
+.mp-redesign .pc-pull-quote cite{display:block;margin-top:1rem;font-family:'Open Sans',sans-serif;font-size:.68rem;font-style:normal;letter-spacing:.1em;color:var(--text-muted);}
+.mp-redesign .pc-faq-list{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:.75rem;padding:0 1.5rem;}
+.mp-redesign .pc-faq-item{border-radius:14px;overflow:hidden;background:var(--bg-card);border:1px solid var(--border);}
+.mp-redesign .pc-faq-question{width:100%;display:flex;align-items:center;justify-content:space-between;background:none;border:none;cursor:pointer;font-family:'Open Sans',sans-serif;font-size:.88rem;font-weight:600;letter-spacing:.05em;color:var(--text);text-align:left;padding:1.25rem 1.5rem;transition:color .2s;}
+.mp-redesign .pc-faq-question:hover{color:var(--cyan);}
+.mp-redesign .pc-faq-icon{font-size:1.2rem;flex-shrink:0;margin-left:1rem;transition:transform .25s;color:var(--lav);}
+.mp-redesign .pc-faq-answer{padding:0 1.5rem 1.25rem;font-family:'EB Garamond',serif;font-size:1.05rem;color:var(--text-muted);line-height:1.8;font-weight:300;}
+.mp-redesign .pc-hidden{display:none;}
+.mp-redesign .pc-checklist-wrap{max-width:900px;margin:0 auto;}
+.mp-redesign .pc-checklist-card{padding:2.5rem 3rem;}
+.mp-redesign .pc-checklist-title{font-family:'Open Sans',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;text-align:center;margin-bottom:.6rem;color:var(--text);}
+.mp-redesign .pc-checklist-subtitle{font-family:'EB Garamond',serif;font-style:italic;color:var(--text-muted);text-align:center;font-size:1.15rem;margin-bottom:2rem;font-weight:300;}
+.mp-redesign .pc-included-list{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:.85rem;}
+.mp-redesign .pc-included-list li{display:flex;align-items:flex-start;gap:.75rem;font-size:1.05rem;color:var(--text-muted);font-weight:300;line-height:1.7;}
+.mp-redesign .pc-included-list li::before{content:'✦';color:var(--lav);font-size:.7rem;margin-top:.35rem;flex-shrink:0;}
+.mp-redesign .article-hero-block{padding:4.5rem 2rem;text-align:center;border-radius:24px;position:relative;overflow:hidden;background:radial-gradient(ellipse 70% 60% at 80% 15%,rgba(242,148,48,.18) 0%,transparent 62%),linear-gradient(135deg,#1A0800 0%,#2E1200 100%);}
+.mp-redesign .article-hero-inner{max-width:780px;margin:0 auto;position:relative;}
+.mp-redesign .ahb-title{font-family:'Merriweather',serif;font-weight:700;color:#fff;font-size:clamp(2rem,4.6vw,3.15rem);line-height:1.16;letter-spacing:-0.015em;margin-bottom:calc(0.92rem * 1.5 * 4);text-shadow:0 0 9px rgba(255,255,255,.75),0 0 20px rgba(242,148,48,.6),0 2px 18px rgba(0,0,0,.35);}
+.mp-redesign .ahb-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(242,148,48,0.15);border:1px solid rgba(242,148,48,0.4);border-radius:50px;padding:6px 16px;margin:0 auto;}
+.mp-redesign .ahb-badge-dot{width:8px;height:8px;background:var(--cyan);border-radius:50%;flex-shrink:0;animation:ahbPulse 2s infinite;}
+.mp-redesign .ahb-badge span{font-family:'Open Sans',sans-serif;font-size:.8rem;font-weight:600;color:var(--cyan);}
+.mp-redesign .ahb-meta{font-family:'Open Sans',sans-serif;font-size:0.92rem;line-height:1.5;color:rgba(255,255,255,.6);margin-top:calc(0.92rem * 1.5 * 4);}
+.mp-redesign .ahb-meta strong{color:rgba(255,255,255,.85);font-weight:600;}
+.mp-redesign .ahb-meta a{color:var(--cyan);font-weight:600;}
+@keyframes ahbPulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.6;transform:scale(1.4);}}
+.mp-redesign .spec-callout{background:linear-gradient(155deg,#FFFFFF,#FFF7EC);border:2px solid rgba(242,148,48,0.34);border-left:6px solid var(--cyan);border-radius:14px;padding:26px 28px;box-shadow:0 10px 30px rgba(139,82,0,0.08);}
+.mp-redesign .spec-callout h3{font-family:'Merriweather',serif;font-size:1.02rem;color:var(--text);margin-bottom:16px;}
+.mp-redesign .spec-callout .cert-row{display:flex;gap:14px;align-items:baseline;margin-bottom:11px;font-size:.98rem;color:var(--text-muted);line-height:1.5;}
+.mp-redesign .spec-callout .cert-row:last-child{margin-bottom:0;}
+.mp-redesign .spec-callout .cert-row b{color:#C47520;font-weight:700;flex-shrink:0;min-width:88px;}
+
+/* ── V1 fixes ── */
+/* issue 1: vertically CENTER the single-title hero blocks (symmetric padding + drop the
+   title's badge-gap margin, which only these header-only blocks don't need) */
+.mp-redesign .article-hero-block{ padding-top:5.5rem !important; padding-bottom:5.5rem !important; }
+.mp-redesign .article-hero-inner .ahb-title:last-child{ margin-bottom:0 !important; }
+/* issue 2: MP style.css sets `ul{list-style:none}` globally — restore article bullets */
+.mp-redesign ul{ list-style: disc; }
+.mp-redesign ol{ list-style: decimal; }
+.mp-redesign li{ margin-bottom:0.3rem; }
+
+/* task: intro "If you're in Florida…" → EB Garamond (only the <font>-wrapped hero title) */
+.mp-redesign .ahb-title font{ font-family:'EB Garamond',serif; font-size:clamp(1.12rem, 1.9vw, 1.35rem); }
+</style>
 </head>
 <body>
 <header class="header" id="header">
@@ -728,15 +945,174 @@
   </div>
 </header>
 <main>
-<section class="comm-section" style="min-height:62vh;display:flex;align-items:center;padding-top:150px;">
-  <div class="container" style="max-width:720px;margin:0 auto;text-align:center;">
-    <p style="font-size:0.74rem;font-weight:800;text-transform:uppercase;letter-spacing:0.16em;color:var(--primary);margin-bottom:14px;">Real Projects</p>
-    <h1 class="sec-title" style="color:var(--text-dark);">Real Projects</h1>
-    <p style="font-size:1.05rem;color:var(--text-mid);line-height:1.85;margin:22px auto 34px;max-width:560px;">Installations from Florida humidity to Minnesota winters, browsable by climate and style &mdash; coming soon. 3,600+ homeowners have already chosen MP Doors.</p>
-    <a href="https://www.homedepot.com" class="button orange">Shop at The Home Depot &#8594;</a>
-    <p style="margin-top:26px;"><a href="/" style="color:var(--primary);font-weight:700;">&#8592; Back to home</a></p>
+
+<!-- ══ ARTICLE HERO ══ -->
+<section class="article-hero">
+  <div class="hero-hex-grid"></div>
+  <div class="container">
+    <div class="article-hero-inner">
+      <h1 class="article-title">Florida Hurricane Season: Does Your Patio Door Meet Code?</h1>
+      <div class="hero-badge"><div class="hero-badge-dot"></div><span>Blog &middot; Impact &amp; Code</span></div>
+      <p class="article-meta">Published <strong>June 2026</strong> &middot; <a href="/blog/">All articles</a></p>
+    </div>
   </div>
 </section>
+
+<div class="mp-redesign">
+
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <div style="padding:40px 0px 40px 0px;margin-top:0px;margin-bottom:0px;"><hr style="border:none;border-top:4px solid #f29430;width:100%;margin:0 auto;display:block;"></div>
+</div>
+
+  <section class="article-hero-block" style="padding:40px 0px 0px 0px;margin-top:0px;margin-bottom:0px;">
+    <div class="article-hero-inner">
+    <h1 class="ahb-title"><div><font color="#ff9f50" face="Merriweather, serif"></font></div><span style="font-size: 10px;"><h1><i style="font-weight: normal;"><font color="#ff9f50" face="Merriweather, serif"></font><span class="glow-title"><font color="#ff9f50" face="Merriweather, serif"></font><span style="font-size: 15px;"><font color="#ff9f50" face="Merriweather, serif">If you're in Florida and your patio door isn't rated for windborne debris, that's not a minor gap.</font><font color="#ff9f50" face="Merriweather, serif"><br></font><font color="#ff9f50" face="Merriweather, serif"><br></font><font color="#ff9f50" face="Merriweather, serif">It's a code issue in many counties, and insurance companies know it.</font></span><font color="#ff9f50" face="Merriweather, serif"></font></span></i><font color="#ff9f50" face="Merriweather, serif"></font></h1></span><div><font color="#ff9f50" face="Merriweather, serif"></font></div></h1>
+    </div>
+  </section>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <div style="font-family:'EB Garamond',serif;font-size:1.08rem;line-height:1.85;text-align:left;padding:0px 0px 0px 0px;margin-top:0px;margin-bottom:0px;"><p>This isn't about worst-case scenarios. It's about a specific building-code question that matters every time a named storm tracks toward Florida's coast: is your patio door rated for the zone your house is in?</p></div>
+</div>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <div style="padding:40px 0px 40px 0px;margin-top:0px;margin-bottom:0px;"><hr style="border:none;border-top:1px solid #f29430;width:100%;margin:0 auto;display:block;"></div>
+</div>
+
+  <section class="article-hero-block" style="padding:60px 0px 0px 0px;margin-top:0px;margin-bottom:0px;">
+    <div class="article-hero-inner">
+    <h1 class="ahb-title"><span class="glow-white-purple">Windborne Debris Zone</span></h1>
+    </div>
+  </section>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <h2 style="text-align:left;padding:40px 0px 40px 20px;margin-top:0px;margin-bottom:0px;border-left:4px solid #F29430;border-radius:0;"><p><span style="background-color: initial; font-size: 2.2rem;">What “Windborne Debris Zone” actually means</span></p></h2>
+</div>
+
+  <div style="font-family:'EB Garamond',serif;font-size:1.08rem;line-height:1.85;text-align:left;padding:0px 0px 0px 0px;margin-top:0px;margin-bottom:0px;"><p><span style="font-size: 17px;">Florida divides the state into wind zones based on the sustained wind speeds a structure is expected to face. In certain areas, called windborne debris regions, building code requires that openings like windows and doors either be protected by rated shutters or be made from impact-resistant materials.<br><br></span></p><p><span style="font-size: 17px;">The most stringent designation is the <span class="glow-title">High-Velocity Hurricane Zone</span>, or <span class="glow-title">HVHZ</span>, which covers Miami-Dade and Broward counties. In the <span class="glow-title"><b style="">HVHZ</b></span>, impact-rated doors and windows aren't a suggestion. They're a permit requirement for new construction and replacement projects. Other coastal counties have their own windborne debris requirements that fall short of HVHZ but still require rated products in many situations.<br><br></span></p><p></p><p><span style="font-size: 17px;">The practical starting point is to check your county's building department before you order a replacement door. The requirement varies not just by county but sometimes by exact location within a county.</span></p></div>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <div style="padding:0px 0px 0px 0px;margin-top:0px;margin-bottom:0px;">
+    <img src="/assets/images/blog/florida-impact-door-hurricane-code/1.png" alt="" style="width:100%;border-radius:12px;opacity:0.85;display:block;margin-left:auto;margin-right:auto;">
+    
+  </div>
+</div>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <div style="padding:40px 0px 40px 0px;margin-top:0px;margin-bottom:0px;"><hr style="border:none;border-top:1px solid #f29430;width:100%;margin:0 auto;display:block;"></div>
+</div>
+
+  <section class="article-hero-block" style="padding:60px 0px 0px 0px;margin-top:0px;margin-bottom:0px;">
+    <div class="article-hero-inner">
+    <h1 class="ahb-title"><span class="glow-white-purple">The Certification</span></h1>
+    </div>
+  </section>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <h2 style="text-align:left;padding:40px 0px 40px 20px;margin-top:0px;margin-bottom:0px;border-left:4px solid #F29430;border-radius:0;"><p>What the certification actually tells you</p></h2>
+</div>
+
+  <div style="font-family:'EB Garamond',serif;font-size:1.08rem;line-height:1.85;text-align:left;padding:0px 0px 0px 0px;margin-top:0px;margin-bottom:0px;"><p><span style="font-size: 17px;">When a door is tested and approved for use in Florida's windborne debris regions, it receives a Florida Building Code (FBC) product approval number. That number is public record. Anyone can search it at floridabuilding.org and pull the original approval document.</span></p><p><span style="font-size: 17px;"><br></span></p><p><span style="font-size: 17px;">The MP Doors Impact Hinged door carries approval number FL-29714, currently at revision 15 (November 2025). The approval covers two sub-product configurations:</span></p></div>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <div class="ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+</div>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <div class="article-callout">
+        <h3>MP Doors Impact Hinged &mdash; Florida approval at a glance</h3>
+        <div class="cert-row"><b>Approval&nbsp;#</b><span><span class="cert-num">FL-29714</span> &nbsp;(rev. 15, Nov 2025)</span></div>
+        <div class="cert-row"><b>29714.1</b><span>Standard windborne debris region configuration</span></div>
+        <div class="cert-row"><b>29714.2</b><span>HVHZ configuration (Miami-Dade &amp; Broward counties)</span></div>
+        <div class="cert-row"><b>Rating</b><span>DP +50 / &minus;50 &mdash; 50 lbs per square foot design pressure</span></div>
+        <div class="cert-row"><b>Tested to</b><span>TAS 201, TAS 202, and TAS 203 (large-missile impact, cyclic wind pressure, uniform static air pressure)</span></div>
+      </div>
+</div>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <div class="ornament">✦ &nbsp; ✦ &nbsp; ✦</div>
+</div>
+
+  <div style="font-family:'EB Garamond',serif;font-size:1.08rem;line-height:1.85;text-align:left;padding:0px 0px 0px 0px;margin-top:0px;margin-bottom:0px;"><p><span style="font-size: 17px;">Both configurations are rated at DP +50/−50, meaning the door is tested to withstand positive and negative design pressure of 50 pounds per square foot. Testing was conducted to TAS 201, TAS 202, and TAS 203, which are the Florida-specific large-missile impact, cyclic wind pressure, and uniform static air pressure standards.</span></p><p><span style="font-size: 17px;"><br></span></p><p><span style="font-size: 17px;">To verify this yourself, go to <span class="text-glow-blue" style="">floridabuilding.org</span>, search product approval number FL29714, and pull the current record. The full test report is there.</span></p></div>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <div style="font-family:'EB Garamond',serif;font-size:1.08rem;line-height:1.85;text-align:left;padding:0px 0px 0px 20px;margin-top:0px;margin-bottom:0px;border-left:1px solid #F29430;border-radius:0;"><p><span style="font-size: 17px; background-color: initial;"><span class="text-glow-blue">The takeaway is simple:</span><span class="glow-title"> <br></span><br>There are two versions of this door. <br><br><ul><li><span style="font-size: 17px; background-color: initial;"><span class="glow-title">If your project is in the HVHZ</span>, you need to specifically confirm you're ordering the HVHZ-approved configuration.<br><br></span></li><li><span style="font-size: 17px; background-color: initial;"><span class="glow-title">If you're outside the HVHZ but still in a windborne debris region</span>, the standard configuration covers you, but confirm with your local building department first.</span></li></ul></span></p></div>
+</div>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <div style="padding:0px 0px 0px 0px;margin-top:0px;margin-bottom:0px;">
+    <img src="/assets/images/blog/florida-impact-door-hurricane-code/2.png" alt="" style="width:100%;border-radius:12px;opacity:0.85;display:block;margin-left:auto;margin-right:auto;">
+    
+  </div>
+</div>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <div style="padding:40px 0px 40px 0px;margin-top:0px;margin-bottom:0px;"><hr style="border:none;border-top:1px solid #f29430;width:100%;margin:0 auto;display:block;"></div>
+</div>
+
+  <section class="article-hero-block" style="padding:60px 0px 0px 0px;margin-top:0px;margin-bottom:0px;">
+    <div class="article-hero-inner">
+    <h1 class="ahb-title">MP Doors Impact Hinged</h1>
+    </div>
+  </section>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <h2 style="text-align:left;padding:40px 0px 40px 20px;margin-top:0px;margin-bottom:0px;border-left:4px solid #F29430;border-radius:0;"><p>What's not impact-rated in the MP Doors lineup</p></h2>
+</div>
+
+  <div style="font-family:'EB Garamond',serif;font-size:1.08rem;line-height:1.85;text-align:left;padding:0px 0px 0px 0px;margin-top:0px;margin-bottom:0px;"><p><span style="font-size: 17px;"><span class="glow-title">Clarity matters here.</span> <br><br>The standard MP Doors gliding and hinged patio doors include the Full Lite Gliding, Shaker Gliding, Hinged Full Lite, Hinged 3/4 Lite, and Shaker Hinged 2/3 Lite. These models are not impact-rated. They carry Florida Building Code approval for non-impact use in windborne debris regions with appropriate shutter protection, but they are not tested or certified as impact-resistant units on their own.</span></p></div>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <div style="font-family:'EB Garamond',serif;font-size:1.08rem;line-height:1.85;text-align:left;padding:0px 0px 0px 20px;margin-top:0px;margin-bottom:0px;border-left:1px solid #F29430;border-radius:0;"><p><font color="#f29430"><span style="font-size: 17px;">📌 <br>If you're in a county or zone that requires impact-rated products without shutter alternatives, only the MP Doors Impact Hinged qualifies.</span></font></p><p></p></div>
+</div>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <div style="padding:0px 0px 0px 0px;margin-top:0px;margin-bottom:0px;">
+    <img src="/assets/images/blog/florida-impact-door-hurricane-code/3.png" alt="" style="width:100%;border-radius:12px;opacity:0.85;display:block;margin-left:auto;margin-right:auto;">
+    
+  </div>
+</div>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <div style="padding:40px 0px 40px 0px;margin-top:0px;margin-bottom:0px;"><hr style="border:none;border-top:1px solid #f29430;width:100%;margin:0 auto;display:block;"></div>
+</div>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <h2 style="text-align:center;padding:40px 0px 40px 0px;margin-top:0px;margin-bottom:0px;border-right:1px solid #F29430;border-left:1px solid #F29430;border-radius:0;"><p><span class="glow-title">Before you order</span></p></h2>
+</div>
+
+  <div style="font-family:'EB Garamond',serif;font-size:1.08rem;line-height:1.85;text-align:left;padding:0px 0px 0px 0px;margin-top:0px;margin-bottom:0px;"><p class="isSelectedEnd">Three things are worth doing before you finalize a patio door order in Florida:</p></div>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <div style="font-family:'EB Garamond',serif;font-size:1.08rem;line-height:1.85;text-align:left;padding:0px 0px 0px 20px;margin-top:0px;margin-bottom:0px;border-left:1px solid #F29430;border-radius:0;"><p><ul><li><span style="background-color: initial;"><span style="font-size: 17px;"><b><span class="glow-title">Check your zone.</span> </b><br><br>Your county building department can confirm whether your address falls in a windborne debris region and what the specific product requirements are. In Miami-Dade and Broward, the HVHZ requirement is nearly universal. In other coastal counties, it depends on distance from the coast and local wind speed maps.<br><br></span></span></li><li><span style="font-size: 17px;"><b><span class="glow-title">Pull the approval record.</span> </b><br><br>Search FL29714 at floridabuilding.org. Compare the sub-product configurations against your permit requirements. Your contractor or permit office will be doing this check anyway. Doing it yourself first means no surprises.<br><br></span></li><li><b><span class="glow-title">Confirm the configuration at checkout.</span> </b><br><br>The MP Doors Impact Hinged is available in the HVHZ-approved configuration. When ordering through The Home Depot, verify which configuration you're selecting. If you're unsure, MP Doors' customer service team can confirm the right choice for your project: <b><u>1-888-366-7717</u></b> or <span class="glow-title">customerservice@mpdoors.com</span>.</li></ul></p><p><span style="background-color: initial;"><span style="font-size: 17px;"></span></span></p><p></p></div>
+</div>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <div style="padding:0px 0px 0px 0px;margin-top:0px;margin-bottom:0px;">
+    <img src="/assets/images/blog/florida-impact-door-hurricane-code/4.png" alt="" style="width:100%;border-radius:12px;opacity:0.85;display:block;margin-left:auto;margin-right:auto;">
+    
+  </div>
+</div>
+
+<div style="margin-top:4rem;margin-bottom:4rem;">
+  <div style="padding:40px 0px 40px 0px;margin-top:0px;margin-bottom:0px;"><hr style="border:none;border-top:1px solid #f29430;width:100%;margin:0 auto;display:block;"></div>
+</div>
+
+  <div style="font-family:'EB Garamond',serif;font-size:1.08rem;line-height:1.85;text-align:left;padding:0px 0px 0px 0px;margin-top:0px;margin-bottom:0px;"><p class="isSelectedEnd">You can find the full certification documentation for the MP Doors Impact Hinged door, including links to the original Florida Building Code approval, at <a href="https://mpdoors.com/learn/">https://mpdoors.com/learn/</a>. The door itself is available at The Home Depot, both in stores and online.</p></div>
+
+
+<div style="margin-top:4rem;">
+<div class="article-cta">
+        <h3>Impact-rated for Florida's toughest zones</h3>
+        <p>The MP Doors Impact Hinged patio door &mdash; FL-29714, HVHZ-ready, DP +50/&minus;50. See the full specs or shop at The Home Depot.</p>
+        <div class="cta-actions">
+          <a href="/doors/patio-doors/impact-hinged/" class="button orange">See the Impact Hinged door &#8594;</a>
+          <a href="https://www.homedepot.com" class="button white" target="_blank" rel="noopener">Shop at The Home Depot</a>
+        </div>
+      </div>
+</div>
+</div>
+
 </main>
 <!-- ═══════════════════════════════════════ FOOTER v3 — Zone 1: Trust strip ═══════════════════════════════════════ -->
 <div class="footer-trust-strip">
