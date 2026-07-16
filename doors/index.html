@@ -4,12 +4,17 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1"/>
 
-<title>Blog | Guides &amp; Insights | MP Doors</title>
-<meta name="description" content="Practical guides from MP Doors on building codes, composite construction, and choosing the right patio and entry door for your home and climate."/>
+<title>All Doors | Entry &amp; Patio Composite Door Catalog | MP Doors</title>
+<meta name="description" content="Browse the full MP Doors lineup — 10 fiberglass entry door styles and 6 composite patio door styles. 100% waterproof, Energy Star, lifetime warranty. Exclusively at The Home Depot."/>
+
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Open+Sans:wght@300;400;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+
+<!-- AOS CSS -->
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+
 <link rel="stylesheet" href="/assets/css/style.css?v=3"/>
 
 <style id="mobile-v4">
@@ -544,86 +549,96 @@
 @media (min-width: 769px) { .footer-trust-fact span { font-size: 1.2rem; } }  /* desktop bigger */
 @media (max-width: 768px) { .footer-trust-facts { align-items: flex-start; } } /* mobile: align icons at start */
 </style>
-<!-- Blog / article styles (warm, site-aligned; echoes the product hero) -->
-<style id="blog-style">
-.article-hero{ position:relative; overflow:hidden; background:linear-gradient(135deg,var(--bg-dark) 0%,#2E1200 100%); padding:220px 0 142px; }
-.article-hero::before{ content:''; position:absolute; top:-140px; right:-110px; width:620px; height:620px; border-radius:50%; background:radial-gradient(circle, rgba(242,148,48,0.18) 0%, transparent 62%); pointer-events:none; }
-/* second glow, centred behind the title, so the heading feels illuminated */
-.article-hero::after{ content:''; position:absolute; top:38%; left:50%; transform:translate(-50%,-50%); width:760px; height:420px; background:radial-gradient(ellipse at center, rgba(242,148,48,0.16) 0%, transparent 68%); pointer-events:none; }
-.article-hero .hero-hex-grid{ opacity:0.22; }
-/* centred hero content (matches the product-page hero) */
-.article-hero-inner{ position:relative; z-index:1; max-width:820px; margin:0 auto; text-align:center; }
-.article-title{ font-family:'Merriweather',serif; font-weight:700; color:#fff; font-size:clamp(2rem,4.6vw,3.15rem); line-height:1.16; letter-spacing:-0.015em;
-  /* gap to the badge = 4× the .article-meta line-height (0.92rem × 1.5) */
-  margin-bottom:calc(0.92rem * 1.5 * 4);
-  text-shadow:0 0 9px rgba(255,255,255,0.75), 0 0 20px rgba(242,148,48,0.6), 0 2px 18px rgba(0,0,0,0.35); }
-.article-hero .hero-badge{ margin:0 auto; }
-/* meta line-height is the 1× baseline; its top gap to the badge = 4× that */
-.article-meta{ font-family:'Open Sans',sans-serif; font-size:0.92rem; line-height:1.5; color:rgba(255,255,255,0.6); margin-top:calc(0.92rem * 1.5 * 4); }
-.article-meta strong{ color:rgba(255,255,255,0.85); font-weight:600; }
-.article-meta a{ color:var(--primary); font-weight:600; }
+<style id="master-catalog">
+/* ══ MASTER CATALOG additions (feature blocks + labeled lineup sections) ══ */
 
-.article-wrap{ background:var(--grad-soft); padding-bottom:96px; }
-.img-placeholder{ color:#9a8467; font-family:'EB Garamond',serif; font-size:0.95rem; text-align:center; padding:20px; }
+/* Two-up category feature blocks (top of page) */
+.cat-features{ background:var(--white); padding:12px 0 4px; }
+.cat-feature-grid{ display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+.cat-feature{
+  position:relative; display:flex; flex-direction:column;
+  border-radius:var(--radius-lg); overflow:hidden; text-decoration:none;
+  border:1px solid var(--grey-border); background:#fff;
+  box-shadow:0 14px 44px rgba(139,82,0,0.08);
+  transition:transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s ease, border-color .3s ease;
+}
+.cat-feature:hover{ transform:translateY(-6px); box-shadow:0 26px 60px rgba(139,82,0,0.16); border-color:rgba(242,148,48,0.35); }
+.cat-feature-img{
+  position:relative; aspect-ratio:3/2; overflow:hidden;
+  display:flex; align-items:center; justify-content:center; padding:26px;
+  background:
+    radial-gradient(ellipse 60% 60% at 50% 28%, rgba(242,148,48,0.10), transparent 65%),
+    linear-gradient(165deg, #FDF8F2 0%, #FBF1E5 55%, #F7E9D8 100%);
+}
+.cat-feature-img img{
+  max-width:100%; max-height:100%; width:auto; object-fit:contain;
+  filter:drop-shadow(0 18px 30px rgba(90,48,16,0.22)); transition:transform .5s ease;
+}
+.cat-feature:hover .cat-feature-img img{ transform:translateY(-6px) scale(1.03); }
+/* full-bleed lifestyle image variant */
+.cat-feature-img.cover{ padding:0; background:none; }
+.cat-feature-img.cover img{ width:100%; height:100%; max-width:none; max-height:none; object-fit:cover; filter:none; }
+.cat-feature:hover .cat-feature-img.cover img{ transform:scale(1.04); }
 
-.article-body{ max-width:760px; margin:0 auto; padding:76px 0 0; }
-.article-body > p{ font-family:'Open Sans',sans-serif; font-size:1.08rem; line-height:1.86; color:#3c2a1b; margin-bottom:1.5rem; }
-/* lede — first paragraph reads larger, like the product-page intro */
-.article-body > p:first-of-type{ font-size:1.22rem; line-height:1.82; color:var(--text-dark); border-top:4px solid #F29430; padding-top:1.5rem; }
-.article-figure{ margin:2.6rem 0; border-radius:16px; overflow:hidden; box-shadow:var(--shadow); background:#EFE3D2; }
-.article-figure img{ width:100%; height:auto; display:block; }
-.article-body h2{ font-family:'Merriweather',serif; font-weight:700; font-size:clamp(1.4rem,2.6vw,1.9rem); color:var(--text-dark); line-height:1.3; margin:2.7rem 0 1rem; }
-.article-body strong{ color:var(--text-dark); font-weight:700; }
-.article-body a{ color:var(--primary-dark); font-weight:600; text-decoration:underline; text-underline-offset:2px; text-decoration-color:rgba(242,148,48,0.5); transition:var(--transition); }
-.article-body a:hover{ color:var(--primary); text-decoration-color:var(--primary); }
-.article-body ul{ list-style:none; padding-left:0; margin:0 0 1.5rem; }
-.article-body li{ position:relative; padding-left:26px; margin-bottom:0.7rem; font-size:1.08rem; line-height:1.75; color:#3c2a1b; }
-.article-body li::before{ content:'›'; position:absolute; left:6px; top:-1px; color:var(--primary); font-weight:700; font-size:1.25rem; }
+.cat-feature-badge{
+  position:absolute; top:18px; left:18px; z-index:2;
+  display:inline-flex; align-items:center; gap:6px; padding:7px 15px; border-radius:50px;
+  background:rgba(255,255,255,0.93); border:1px solid rgba(242,148,48,0.3);
+  font-family:'EB Garamond',serif; font-weight:700; font-size:0.82rem; color:var(--primary-deep);
+  box-shadow:0 4px 14px rgba(139,82,0,0.14);
+}
+.cat-feature-body{
+  position:relative; padding:34px 36px 38px; flex:1;
+  display:flex; flex-direction:column; align-items:flex-start; overflow:hidden;
+  background:linear-gradient(135deg, var(--bg-dark) 0%, #3D1800 100%);
+}
+.cat-feature-body::after{
+  content:''; position:absolute; right:-60px; top:-70px; width:280px; height:280px;
+  background:radial-gradient(circle, rgba(242,148,48,0.20), transparent 65%); pointer-events:none;
+}
+.cat-feature-body h2{
+  position:relative; font-family:'Merriweather',serif; font-weight:700; color:#fff;
+  font-size:clamp(1.5rem,2.4vw,2rem); line-height:1.2; margin-bottom:12px; letter-spacing:-0.02em;
+}
+.cat-feature-body p{
+  position:relative; color:rgba(255,255,255,0.75); font-size:0.98rem; line-height:1.65;
+  margin-bottom:24px; max-width:410px;
+}
+.cat-feature-cta{
+  position:relative; margin-top:auto; display:inline-flex; align-items:center; gap:9px;
+  padding:13px 28px; border-radius:50px; background:var(--primary); color:#fff;
+  font-family:'EB Garamond',serif; font-weight:700; font-size:1rem; letter-spacing:0.03em;
+  box-shadow:0 8px 22px rgba(242,148,48,0.38);
+  transition:gap .25s ease, background .25s ease;
+}
+.cat-feature:hover .cat-feature-cta{ gap:14px; background:var(--primary-dark); }
 
-.article-callout{ background:linear-gradient(155deg,#FFFFFF,#FFF7EC); border:2px solid rgba(242,148,48,0.34); border-left:6px solid var(--primary); border-radius:14px; padding:26px 28px; margin:0.4rem 0 1.9rem; box-shadow:var(--shadow); }
-.article-callout h3{ font-family:'Merriweather',serif; font-size:1.02rem; color:var(--text-dark); margin-bottom:16px; }
-.article-callout .cert-row{ display:flex; gap:14px; align-items:baseline; margin-bottom:11px; font-size:0.98rem; color:#3c2a1b; line-height:1.5; }
-.article-callout .cert-row:last-child{ margin-bottom:0; }
-.article-callout .cert-row b{ color:var(--primary-deep); font-weight:700; flex-shrink:0; min-width:88px; }
-.article-callout .cert-num{ font-family:'Merriweather',serif; font-size:1.25rem; font-weight:700; color:var(--primary-dark); }
-
-.article-cta{ margin:72px auto 0; max-width:760px; background:linear-gradient(155deg,#2E1500,#200d00); border-radius:18px; padding:64px 56px; text-align:center; position:relative; overflow:hidden; box-shadow:0 24px 60px rgba(0,0,0,0.28); }
-.article-cta::after{ content:''; position:absolute; inset:0; background:radial-gradient(ellipse 60% 50% at 85% 15%, rgba(242,148,48,0.16), transparent 55%); pointer-events:none; }
-.article-cta h3{ font-family:'Merriweather',serif; color:#fff; font-size:clamp(1.35rem,2.4vw,1.75rem); margin-bottom:18px; position:relative; }
-.article-cta p{ color:rgba(255,255,255,0.72); font-size:1rem; line-height:1.75; margin:0 auto 36px; max-width:560px; position:relative; }
-.article-cta .cta-actions{ display:flex; gap:18px; justify-content:center; flex-wrap:wrap; position:relative; }
-/* glowing CTA buttons — echoes the article title's white + orange radiance */
-.article-cta .cta-actions .button{ box-shadow:0 0 12px rgba(255,255,255,0.30), 0 0 26px rgba(242,148,48,0.55), 0 0 52px rgba(242,148,48,0.30); transition:box-shadow .3s ease, transform .3s ease; }
-.article-cta .cta-actions .button:hover{ transform:translateY(-2px); box-shadow:0 0 16px rgba(255,255,255,0.45), 0 0 36px rgba(242,148,48,0.72), 0 0 68px rgba(242,148,48,0.42); }
-
-/* Blog index — featured card + grid */
-.blog-section{ background:var(--white); padding:72px 0 100px; }
-.blog-featured{ display:grid; grid-template-columns:1.05fr 1fr; background:var(--white); border:1px solid var(--grey-border); border-radius:var(--radius-lg); overflow:hidden; text-decoration:none; box-shadow:var(--shadow-soft); transition:var(--transition); }
-.blog-featured:hover{ transform:translateY(-4px); box-shadow:var(--shadow); border-color:rgba(242,148,48,0.3); }
-.blog-featured-img{ min-height:340px; background:linear-gradient(135deg,#EFE3D2,#E3D2BB); display:flex; align-items:center; justify-content:center; overflow:hidden; }
-.blog-featured-img img{ width:100%; height:100%; object-fit:cover; display:block; }
-.blog-featured-body{ padding:48px 44px; display:flex; flex-direction:column; justify-content:center; gap:14px; }
-.blog-featured-meta{ font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--primary); }
-.blog-featured-body h2{ font-family:'Merriweather',serif; font-size:clamp(1.4rem,2.4vw,2rem); line-height:1.3; color:var(--text-dark); }
-.blog-featured-body p{ font-family:'EB Garamond',serif; font-size:1.05rem; color:var(--text-mid); line-height:1.7; }
-.blog-featured-cta{ margin-top:6px; font-size:0.78rem; font-weight:700; letter-spacing:0.07em; text-transform:uppercase; color:var(--primary); display:inline-flex; align-items:center; gap:6px; }
-.blog-featured:hover .blog-featured-cta{ gap:11px; }
+/* Labeled lineup sections */
+.cat-lineup{ padding-top:68px; }
+.cat-lineup:first-of-type{ padding-top:8px; }
+.cat-section-head{ display:flex; align-items:baseline; gap:16px; margin-bottom:28px; flex-wrap:wrap; }
+.cat-section-head h2{
+  font-family:'Merriweather',serif; font-weight:700; color:var(--text-dark);
+  font-size:clamp(1.5rem,2.4vw,2rem); letter-spacing:-0.02em;
+}
+.cat-section-count{
+  font-family:'EB Garamond',serif; font-size:0.82rem; font-weight:700; text-transform:uppercase;
+  letter-spacing:0.1em; color:var(--primary);
+}
+a.cat-section-link{
+  margin-left:auto; color:var(--primary); font-weight:700; font-size:0.85rem;
+  display:inline-flex; align-items:center; gap:6px; transition:gap .25s ease;
+}
+a.cat-section-link:hover{ gap:10px; }
 
 @media (max-width:768px){
-  .article-hero{ padding:158px 0 94px; }
-  .article-hero::after{ width:110%; }
-  .article-body{ padding-top:48px; }
-  .article-body > p, .article-body li{ font-size:1rem; line-height:1.8; }
-  .article-body > p:first-of-type{ font-size:1.1rem; }
-  .article-figure{ margin:2rem 0; border-radius:12px; }
-  .article-callout{ padding:22px 20px; }
-  .article-callout .cert-row{ flex-direction:column; gap:2px; }
-  .article-cta{ padding:48px 26px; }
-  .blog-featured{ grid-template-columns:1fr; }
-  .blog-featured-img{ min-height:210px; }
-  .blog-featured-body{ padding:30px 24px; }
+  .cat-feature-grid{ grid-template-columns:1fr; gap:20px; }
+  .cat-feature-body{ padding:28px 24px 30px; }
+  .cat-lineup{ padding-top:52px; }
+  .cat-section-head a.cat-section-link{ margin-left:0; flex-basis:100%; }
 }
 </style>
+<!-- ══ "View Full Collection" — highlighted lead item in the Doors menu (desktop + mobile) ══ -->
 <style id="nav-featured">
 /* Desktop dropdown */
 .menu-card.menu-featured{
@@ -643,6 +658,7 @@
 .menu-card.menu-featured:hover .menu-card-txt p{ color:#fff; }
 .menu-card.menu-featured:hover .menu-card-txt h3 .arr{ transform:translateX(4px); }
 .menu-featured-divider{ height:1px; background:rgba(242,148,48,0.16); margin:2px 4px 10px; }
+
 /* Mobile drawer */
 .m-nav-sub a.m-nav-featured{
   margin:12px 16px 10px; padding:13px 16px; border-radius:10px;
@@ -654,9 +670,23 @@
 .m-nav-sub a.m-nav-featured .arr{ color:var(--primary); }
 .m-nav-sub a.m-nav-featured:active{ background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:#fff !important; }
 .m-nav-sub a.m-nav-featured:active .arr{ color:#fff; }
+
+/* ── Hero header: 4× vertical-rhythm rule on the sub-paragraph ──
+   1× = leading = (line-height 1.6 − 1) = 0.6em (em → scales with the sub's responsive clamp size).
+   Desktop gap above & below = 4× = 2.4em · Mobile = 3× = 1.8em. */
+.cat-header .cat-sub{
+  font-family:'EB Garamond',serif;
+  max-width:560px;
+  margin:calc(1em * (1.6 - 1) * 4) auto;   /* 2.4em auto */
+}
+@media (max-width:768px){
+  .cat-header .cat-sub{ margin:calc(1em * (1.6 - 1) * 3) auto; }  /* 1.8em auto */
+}
 </style>
 </head>
+
 <body>
+
 <header class="header" id="header">
   <div class="header-box">
     <div class="container">
@@ -670,7 +700,7 @@
 
         <!-- Doors -->
         <li class="drop-menu">
-          <a href="/doors/">Doors
+          <a class="active" href="/doors/">Doors
             <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </a>
           <div class="drop-list-wrap">
@@ -852,35 +882,226 @@
     </div>
   </div>
 </header>
+
 <main>
 
-<!-- ══ BLOG HERO ══ -->
-<section class="article-hero">
-  <div class="hero-hex-grid"></div>
+<!-- ═══════════════════════════════════════ PAGE HEADER ═══════════════════════════════════════ -->
+<section class="cat-header" style="text-align:center;padding-top:184px;">
   <div class="container">
-    <div class="article-hero-inner">
-      <h1 class="article-title">Guides &amp; Insights</h1>
-      <div class="hero-badge"><div class="hero-badge-dot"></div><span>MP Doors &middot; Blog</span></div>
-      <p class="article-meta">Practical answers on codes, materials, and choosing the right door.</p>
+    <h1 class="page-title txt-primary">Explore the MP Doors Collection</h1>
+    <p class="cat-sub">Every MP Doors style in one place. Fiberglass entry doors and composite patio doors, built waterproof and sold exclusively at The Home Depot.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ CATEGORY FEATURE BLOCKS ═══════════════════════════════════════ -->
+<section class="cat-features">
+  <div class="container">
+    <div class="cat-feature-grid">
+
+      <a class="cat-feature" href="/doors/entry-doors/" data-aos="fade-up">
+        <div class="cat-feature-img">
+          <span class="cat-feature-badge">10 Styles</span>
+          <img src="/assets/images/entry-doors/modern-full-lite.jpg" alt="MP Doors fiberglass entry door">
+        </div>
+        <div class="cat-feature-body">
+          <h2>Entry Doors</h2>
+          <p>Fiberglass front doors on full composite frames — from full-height glass to Craftsman panels. Ten styles to match your entry.</p>
+          <span class="cat-feature-cta">Explore Entry Doors &rarr;</span>
+        </div>
+      </a>
+
+      <a class="cat-feature" href="/doors/patio-doors/" data-aos="fade-up" data-aos-delay="100">
+        <div class="cat-feature-img cover">
+          <span class="cat-feature-badge">6 Styles</span>
+          <img src="/assets/images/sliding-patio-door.png" alt="MP Doors composite gliding patio door in a sunlit living room">
+        </div>
+        <div class="cat-feature-body">
+          <h2>Patio Doors</h2>
+          <p>Composite gliding, hinged, and Florida impact-rated patio doors. Six styles, built to open smoothly for years.</p>
+          <span class="cat-feature-cta">Explore Patio Doors &rarr;</span>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
 
-<section class="blog-section">
+<!-- ═══════════════════════════════════════ PRODUCT GRID ═══════════════════════════════════════ -->
+<section class="cat-grid-section">
   <div class="container">
-    <a class="blog-featured" href="/blog/florida-impact-door-hurricane-code/">
-      <div class="blog-featured-img"><img src="/assets/images/blog/florida-impact-door-hurricane-code/1.png" alt="Florida wind zones and windborne debris regions" loading="lazy"></div>
-      <div class="blog-featured-body">
-        <span class="blog-featured-meta">Impact &amp; Code &middot; June 2026</span>
-        <h2>Florida Hurricane Season: Does Your Patio Door Meet Code?</h2>
-        <p>What &ldquo;windborne debris zone&rdquo; really means, how Florida Building Code product approval works, and how to confirm your patio door &mdash; and the right Impact Hinged configuration &mdash; is rated for your county.</p>
-        <span class="blog-featured-cta">Read article &#8594;</span>
+
+    <div class="cat-lineup" id="entry">
+      <div class="cat-section-head">
+        <h2>Entry Doors</h2>
+        <span class="cat-section-count">10 Styles</span>
+        <a class="cat-section-link" href="/doors/entry-doors/">View Entry category &rarr;</a>
       </div>
-    </a>
+      <div class="cat-grid">
+
+        <a class="door-card" href="/doors/entry-doors/oval-lite-34/" data-aos="fade-up" data-aos-delay="0">
+          <div class="door-card-img"><img src="/assets/images/entry-doors/oval-lite-34.jpg" alt="3/4 Oval Lite Entry Door" loading="lazy"></div>
+          <div class="door-card-body">
+            <h3>3/4 Oval Lite Entry Door</h3>
+            <p class="door-card-desc">Oval glass insert · Traditional style</p>
+            <span class="door-card-cta">View Options →</span>
+          </div>
+        </a>
+        <a class="door-card" href="/doors/entry-doors/modern-full-lite/" data-aos="fade-up" data-aos-delay="100">
+          <div class="door-card-img"><img src="/assets/images/entry-doors/modern-full-lite.jpg" alt="Modern Full Lite Entry Door" loading="lazy"></div>
+          <div class="door-card-body">
+            <h3>Modern Full Lite Entry Door</h3>
+            <p class="door-card-desc">Full-height glass · Contemporary style</p>
+            <span class="door-card-cta">View Options →</span>
+          </div>
+        </a>
+        <a class="door-card" href="/doors/entry-doors/34-lite/" data-aos="fade-up" data-aos-delay="200">
+          <div class="door-card-img"><img src="/assets/images/entry-doors/34-lite.jpg" alt="3/4 Lite Entry Door" loading="lazy"></div>
+          <div class="door-card-body">
+            <h3>3/4 Lite Entry Door</h3>
+            <p class="door-card-desc">Three-quarter glass panel · Classic proportions</p>
+            <span class="door-card-cta">View Options →</span>
+          </div>
+        </a>
+        <a class="door-card" href="/doors/entry-doors/craftsman/" data-aos="fade-up" data-aos-delay="0">
+          <div class="door-card-img"><img src="/assets/images/entry-doors/craftsman.jpg" alt="Craftsman Entry Door" loading="lazy"></div>
+          <div class="door-card-body">
+            <h3>Craftsman Entry Door</h3>
+            <p class="door-card-desc">Straight-edge panel · Classic Craftsman detail</p>
+            <span class="door-card-cta">View Options →</span>
+          </div>
+        </a>
+        <a class="door-card" href="/doors/entry-doors/contemporary-teak/" data-aos="fade-up" data-aos-delay="100">
+          <div class="door-card-img"><img src="/assets/images/entry-doors/contemporary-teak.jpg" alt="Contemporary Teak Entry Door" loading="lazy"></div>
+          <div class="door-card-body">
+            <h3>Contemporary Teak Entry Door</h3>
+            <p class="door-card-desc">Horizontal teak grain · Modern profile</p>
+            <span class="door-card-cta">View Options →</span>
+          </div>
+        </a>
+        <a class="door-card" href="/doors/entry-doors/narrow-lite/" data-aos="fade-up" data-aos-delay="200">
+          <div class="door-card-img"><img src="/assets/images/entry-doors/narrow-lite.jpg" alt="Narrow Lite Entry Door" loading="lazy"></div>
+          <div class="door-card-body">
+            <h3>Narrow Lite Entry Door</h3>
+            <p class="door-card-desc">Slim glass column · Modern or traditional settings</p>
+            <span class="door-card-cta">View Options →</span>
+          </div>
+        </a>
+        <a class="door-card" href="/doors/entry-doors/full-lite/" data-aos="fade-up" data-aos-delay="0">
+          <div class="door-card-img"><img src="/assets/images/entry-doors/full-lite.jpg" alt="Full Lite Entry Door" loading="lazy"></div>
+          <div class="door-card-body">
+            <h3>Full Lite Entry Door</h3>
+            <p class="door-card-desc">Full-height glass panel · Maximum natural light</p>
+            <span class="door-card-cta">View Options →</span>
+          </div>
+        </a>
+        <a class="door-card" href="/doors/entry-doors/4-lite/" data-aos="fade-up" data-aos-delay="100">
+          <div class="door-card-img"><img src="/assets/images/entry-doors/4-lite.jpg" alt="4 Lite Entry Door" loading="lazy"></div>
+          <div class="door-card-body">
+            <h3>4 Lite Entry Door</h3>
+            <p class="door-card-desc">Four glass panels · Traditional grid detail</p>
+            <span class="door-card-cta">View Options →</span>
+          </div>
+        </a>
+        <a class="door-card" href="/doors/entry-doors/3-lite/" data-aos="fade-up" data-aos-delay="200">
+          <div class="door-card-img"><img src="/assets/images/entry-doors/3-lite.jpg" alt="3 Lite Entry Door" loading="lazy"></div>
+          <div class="door-card-body">
+            <h3>3 Lite Entry Door</h3>
+            <p class="door-card-desc">Three glass panels · Balanced proportion</p>
+            <span class="door-card-cta">View Options →</span>
+          </div>
+        </a>
+        <a class="door-card" href="/doors/entry-doors/half-lite/" data-aos="fade-up" data-aos-delay="0">
+          <div class="door-card-img"><img src="/assets/images/entry-doors/half-lite.jpg" alt="1/2 Lite Entry Door" loading="lazy"></div>
+          <div class="door-card-body">
+            <h3>1/2 Lite Entry Door</h3>
+            <p class="door-card-desc">Half-height glass · Privacy-first design</p>
+            <span class="door-card-cta">View Options →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="cat-lineup" id="patio">
+      <div class="cat-section-head">
+        <h2>Patio Doors</h2>
+        <span class="cat-section-count">6 Styles</span>
+        <a class="cat-section-link" href="/doors/patio-doors/">View Patio category &rarr;</a>
+      </div>
+      <div class="cat-grid">
+        <a class="door-card" href="/doors/patio-doors/full-lite-gliding/" data-aos="fade-up" data-aos-delay="0">
+          <div class="door-card-img"><img src="/assets/images/patio-doors/full-lite-gliding.jpg" alt="Full Lite Gliding Patio Door" loading="lazy"></div>
+          <div class="door-card-body">
+            <h3>Full Lite Gliding Patio Door</h3>
+            <p class="door-card-desc">Floor-to-ceiling glass · Slides open, space-saving</p>
+            <span class="door-card-cta">View Options →</span>
+          </div>
+        </a>
+        <a class="door-card" href="/doors/patio-doors/shaker-gliding-2-3-lite/" data-aos="fade-up" data-aos-delay="100">
+          <div class="door-card-img"><img src="/assets/images/patio-doors/shaker-gliding-2-3-lite.jpg" alt="Shaker Gliding 2/3 Lite Patio Door" loading="lazy"></div>
+          <div class="door-card-body">
+            <h3>Shaker Gliding 2/3 Lite Patio Door</h3>
+            <p class="door-card-desc">2/3 glass, solid bottom · Slides open</p>
+            <span class="door-card-cta">View Options →</span>
+          </div>
+        </a>
+        <a class="door-card" href="/doors/patio-doors/hinged-full-lite/" data-aos="fade-up" data-aos-delay="200">
+          <div class="door-card-img"><img src="/assets/images/patio-doors/hinged-full-lite.jpg" alt="Hinged Full Lite Patio Door" loading="lazy"></div>
+          <div class="door-card-body">
+            <h3>Hinged Full Lite Patio Door</h3>
+            <p class="door-card-desc">Full-glass panels · Widest opening, swings open</p>
+            <span class="door-card-cta">View Options →</span>
+          </div>
+        </a>
+        <a class="door-card" href="/doors/patio-doors/hinged-3-4-lite/" data-aos="fade-up" data-aos-delay="0">
+          <div class="door-card-img"><img src="/assets/images/patio-doors/hinged-3-4-lite.jpg" alt="Hinged 3/4 Lite Patio Door" loading="lazy"></div>
+          <div class="door-card-body">
+            <h3>Hinged 3/4 Lite Patio Door</h3>
+            <p class="door-card-desc">3/4 glass, lower panel · Swings open</p>
+            <span class="door-card-cta">View Options →</span>
+          </div>
+        </a>
+        <a class="door-card" href="/doors/patio-doors/shaker-hinged-2-3-lite/" data-aos="fade-up" data-aos-delay="100">
+          <div class="door-card-img"><img src="/assets/images/patio-doors/shaker-hinged-2-3-lite.jpg" alt="Shaker Hinged 2/3 Lite Patio Door" loading="lazy"></div>
+          <div class="door-card-body">
+            <h3>Shaker Hinged 2/3 Lite Patio Door</h3>
+            <p class="door-card-desc">2/3 glass, Shaker style · Swings open</p>
+            <span class="door-card-cta">View Options →</span>
+          </div>
+        </a>
+        <a class="door-card" href="/doors/patio-doors/impact-hinged/" data-aos="fade-up" data-aos-delay="200">
+          <div class="door-card-img"><img src="/assets/images/patio-doors/impact-hinged.jpg" alt="Impact Hinged Patio Door" loading="lazy"></div>
+          <div class="door-card-body">
+            <h3>Impact Hinged Patio Door</h3>
+            <p class="door-card-desc">Florida impact-rated · Storm-certified composite</p>
+            <span class="door-card-cta">View Options →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ MATERIAL CALLOUT ═══════════════════════════════════════ -->
+<section class="cat-callout">
+  <div class="container">
+    <h3>Every MP Door is built to last.</h3>
+    <p class="cat-callout-line">Fiberglass or composite panels<span class="sep">·</span>Full composite frames<span class="sep">·</span>Won't rot, warp, or rust<span class="sep">·</span>Lifetime warranty</p>
+    <a href="/why-composite/">Why this matters →</a>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ CTA ═══════════════════════════════════════ -->
+<section class="cat-cta">
+  <div class="container">
+    <h3>MP Doors are made for The Home Depot.</h3>
+    <p>Every style in this collection is available in-store and online — with professional installation available at your local store.</p>
+    <a class="button orange" href="https://www.homedepot.com">Shop MP Doors at The Home Depot →</a>
   </div>
 </section>
 
 </main>
+
 <!-- ═══════════════════════════════════════ FOOTER v3 — Zone 1: Trust strip ═══════════════════════════════════════ -->
 <div class="footer-trust-strip">
   <div class="container">
@@ -982,11 +1203,17 @@
 
   </div>
 </footer>
+<!-- ═══════════════════════════════════════ SCRIPTS ═══════════════════════════════════════ -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
 AOS.init({ duration: 700, once: true, offset: 80 });
-window.addEventListener('scroll', () => { document.getElementById('header').classList.toggle('scrolled', window.scrollY > 40); });
-var hb=document.querySelector('.hamburger'); if(hb){ hb.addEventListener('click', function(){ var n=document.querySelector('.head-right'); if(n){ n.style.display = n.style.display==='flex'?'none':'flex'; } }); }
+window.addEventListener('scroll', () => {
+  document.getElementById('header').classList.toggle('scrolled', window.scrollY > 40);
+});
+document.querySelector('.hamburger').addEventListener('click', function() {
+  const nav = document.querySelector('.head-right');
+  if (nav) { nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex'; }
+});
 </script>
 
 <!-- ═══ MOBILE NAV DRAWER (V3) ═══ -->

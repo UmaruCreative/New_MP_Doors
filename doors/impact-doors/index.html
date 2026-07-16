@@ -392,7 +392,8 @@ html{scroll-padding-top:84px;}
 .m-nav,
 .m-nav-overlay { display: none; }
 
-@media (max-width: 768px) {
+/* Nav / hamburger / drawer collapse on tablet too (iPad portrait 769–1024px) */
+@media (max-width: 1024px) {
 
   /* ═══════════════════════════════════════════
      1. HEADER / HAMBURGER MENU
@@ -537,6 +538,10 @@ html{scroll-padding-top:84px;}
 
   /* Lock body scroll while drawer is open */
   body.m-nav-locked { overflow: hidden; touch-action: none; }
+}
+
+/* Phone-only content tuning stays at <=768px (tablets keep the roomier layout) */
+@media (max-width: 768px) {
 
   /* ═══════════════════════════════════════════
      2. HERO SECTION
@@ -938,6 +943,37 @@ html{scroll-padding-top:84px;}
   .hero-cat-line { margin-top: 1.6rem; }
 }
 </style>
+<style id="nav-featured">
+/* Desktop dropdown */
+.menu-card.menu-featured{
+  background:linear-gradient(135deg, rgba(242,148,48,0.16) 0%, rgba(255,159,80,0.06) 100%);
+  border:1px solid rgba(242,148,48,0.38); margin-bottom:10px; transition:var(--transition);
+}
+.menu-card.menu-featured:hover{
+  background:linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  border-color:var(--primary); box-shadow:0 10px 26px rgba(242,148,48,0.35);
+}
+.menu-card.menu-featured .menu-icon-wrap{ background:var(--primary); }
+.menu-card.menu-featured .menu-icon-wrap svg{ fill:none; stroke:#fff; }
+.menu-card.menu-featured:hover .menu-icon-wrap{ background:rgba(255,255,255,0.22); }
+.menu-card.menu-featured .menu-card-txt h3{ color:var(--primary-deep); display:inline-flex; align-items:center; gap:8px; font-size:1.22rem; }
+.menu-card.menu-featured .menu-card-txt h3 .arr{ transition:transform .25s ease; }
+.menu-card.menu-featured:hover .menu-card-txt h3,
+.menu-card.menu-featured:hover .menu-card-txt p{ color:#fff; }
+.menu-card.menu-featured:hover .menu-card-txt h3 .arr{ transform:translateX(4px); }
+.menu-featured-divider{ height:1px; background:rgba(242,148,48,0.16); margin:2px 4px 10px; }
+/* Mobile drawer */
+.m-nav-sub a.m-nav-featured{
+  margin:12px 16px 10px; padding:13px 16px; border-radius:10px;
+  border:1px solid rgba(242,148,48,0.34); border-top:1px solid rgba(242,148,48,0.34);
+  background:linear-gradient(135deg, rgba(242,148,48,0.16) 0%, rgba(255,159,80,0.06) 100%);
+  color:var(--primary-deep) !important; font-weight:700;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.m-nav-sub a.m-nav-featured .arr{ color:var(--primary); }
+.m-nav-sub a.m-nav-featured:active{ background:linear-gradient(135deg, var(--primary), var(--primary-dark)); color:#fff !important; }
+.m-nav-sub a.m-nav-featured:active .arr{ color:#fff; }
+</style>
 </head>
 <body>
 
@@ -955,12 +991,21 @@ html{scroll-padding-top:84px;}
 
         <!-- Doors -->
         <li class="drop-menu">
-          <a class="active" href="/doors/entry-doors/">Doors
+          <a class="active" href="/doors/">Doors
             <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
           </a>
           <div class="drop-list-wrap">
             <div class="drop-list-container">
               <div class="menu-cards-wrap">
+                <a class="menu-card menu-featured" href="/doors/">
+                  <div class="menu-icon-box">
+                    <div class="menu-icon-wrap">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                    </div>
+                  </div>
+                  <div class="menu-card-txt"><h3>View Full Collection <span class="arr">&rarr;</span></h3></div>
+                </a>
+                <div class="menu-featured-divider"></div>
                 <a class="menu-card" href="/doors/entry-doors/">
                   <div class="menu-icon-box">
                     <div class="menu-icon-wrap">
@@ -1536,6 +1581,7 @@ html{scroll-padding-top:84px;}
         <svg class="m-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <div class="m-nav-sub">
+        <a class="m-nav-featured" href="/doors/">View Full Collection <span class="arr">&rarr;</span></a>
         <a href="/doors/entry-doors/">Entry Doors</a>
         <a href="/doors/patio-doors/#gliding">Gliding Patio Doors</a>
         <a href="/doors/patio-doors/#hinged">Hinged Patio Doors</a>
